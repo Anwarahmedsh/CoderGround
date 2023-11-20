@@ -10,7 +10,7 @@
 <body>
   <header class="font-body">
     <a href="HomePagee.html" class="logo">
-      <img src="images\logo.jpg" alt="Ground coder" width="150" height="150">
+      <img src="images/logo.jpg" alt="Ground coder" width="150" height="150">
     </a> 
     <span class="header-text"> Coder Ground <br><span class="subtext"> let's make Learning fun! </span></span>
   </header>
@@ -36,19 +36,21 @@
       <option value="asc">A-Z</option>
       <option value="desc">Z-A</option>
     </select>
+
     <br>
     <div class="tutors-container" id="tutorsContainer">
       <!-- Tutors' information will be displayed here dynamically using JavaScript -->
     </div>
   </form>
+
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       var tutorsData = [
-        { name: "T.Abdullah", topic: "Artificial intelligence" },
-        { name: "T.Sarah", topic: "Web Development, JavaScript" },
-        { name: "T.Anwar", topic: "Data Science, Machine Learning" },
-        { name: "T.Mona", topic: "Scratch, Robotics" },
-        { name: "T.Hussam", topic: "Python" }
+        { name: "T.Abdullah", topic: "Artificial intelligence", image: "images/manteacher.png" },
+        { name: "T.Sarah", topic: "Web Development, JavaScript", image: "images/teacherm.png" },
+        { name: "T.Anwar", topic: "Data Science, Machine Learning", image: "images/teacherani.jpg" },
+        { name: "T.Mona", topic: "Scratch, Robotics", image: "images/ttttttttttttttttttttt.jpg" },
+        { name: "T.Hussam", topic: "Python", image: "images/hussam.png" }
       ];
 
       displayTutors(tutorsData);
@@ -63,7 +65,7 @@
         tutorDiv.classList.add("tutor");
 
         tutorDiv.innerHTML = `
-          <img src="images\default-avatar.png" alt="${tutor.name}">
+          <img src="${tutor.image}" alt="${tutor.name}">
           <h3>${tutor.name}</h3>
           <p>Teaching topics: ${tutor.topic}</p>
         `;
@@ -75,11 +77,11 @@
     function sortTutors() {
       var sortOrder = document.getElementById("sortOrder").value;
       var tutorsData = [
-        { name: "T.Abdullah", topic: "Artificial intelligence" },
-        { name: "T.Sarah", topic: "Web Development, JavaScript" },
-        { name: "T.Anwar", topic: "Data Science, Machine Learning" },
-        { name: "T.Mona", topic: "Scratch, Robotics" },
-        { name: "T.Hussam", topic: "Python" }
+        { name: "T.Abdullah", topic: "Artificial intelligence", image: "images/manteacher.png" },
+        { name: "T.Sarah", topic: "Web Development, JavaScript", image: "images/teacherm.png" },
+        { name: "T.Anwar", topic: "Data Science, Machine Learning", image: "images/teacherani.jpg" },
+        { name: "T.Mona", topic: "Scratch, Robotics", image: "images/ttttttttttttttttttttt.jpg" },
+        { name: "T.Hussam", topic: "Python", image: "images/hussam.png" }
       ];
 
       if (sortOrder === "asc") {
@@ -95,7 +97,11 @@
       displayTutors(tutorsData);
     }
   </script>
- <footer>
+
+<br>
+<br>
+<br>
+  <footer>
     <p>Contact us: info@example.com | Phone: 123456-7890</p>
     <p>© CoderGround 2023</p>
   </footer>
