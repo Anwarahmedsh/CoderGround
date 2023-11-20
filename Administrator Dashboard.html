@@ -5,14 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AdministratorPage</title>
   <link rel="stylesheet" href="Administrator.css">
-  <link rel="stylesheet" href="common.css">
 </head>
 
 <body>                    
 <header class="page-header">
 
     <a href="HomePagee.html" class="logo">
-      <img src="images\logo.jpg" alt="Ground coder" width="150" height="150">
+      <img src="images\logo.png" alt="Ground coder" width="150" height="150">
       </a>
  <span class="header-text"> Coder Ground <br><span class= "subtext"> let's make Learning fun! </span> </span>
    
@@ -29,8 +28,91 @@
           <li><a href="courses.html" accesskey="c">current courses</a></li>
           <li><a href="tutors.html" accesskey="t">tutors</a></li>
       </ul>
+	  <img src="images/moon.png" id="icon">
     </nav>
+<script>
+var icon = document.getElementById("icon");
+var isDarkMode = localStorage.getItem('darkMode') === 'true';
 
+// Function to toggle dark mode
+function toggleDarkMode() {
+  document.body.classList.toggle("dark-theme");
+  isDarkMode = !isDarkMode; // Toggle the mode
+  localStorage.setItem('darkMode', isDarkMode); // Save the mode in localStorage
+  if (document.body.classList.contains("dark-theme")) {
+    icon.src = "images/sun.png";
+  } else {
+    icon.src = "images/moon.png";
+  }
+}
+
+// Apply dark mode based on user's preference
+if (isDarkMode) {
+  document.body.classList.add("dark-theme");
+  icon.src = "images/sun.png";
+} else {
+  document.body.classList.remove("dark-theme");
+  icon.src = "images/moon.png";
+}
+
+// Event listener for clicking the icon to toggle dark mode
+icon.onclick = toggleDarkMode;
+
+function myFunction() {
+  var space = document.getElementById("space");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (space.style.display === "none") {
+    space.style.display = "inline";
+    btnText.innerHTML = "more"; 
+    moreText.style.display = "none";
+  } else {
+    space.style.display = "none";
+    btnText.innerHTML = "less"; 
+    moreText.style.display = "inline";
+  }
+}
+
+function myFunction2() {
+  var space2 = document.getElementById("space2");
+  var moreText2 = document.getElementById("more2");
+  var btnText2 = document.getElementById("myBtn2");
+
+  if (space2.style.display === "none") {
+    space2.style.display = "inline";
+    btnText2.innerHTML = "more"; 
+    moreText2.style.display = "none";
+  } else {
+    space2.style.display = "none";
+    btnText2.innerHTML = "less"; 
+    moreText2.style.display = "inline";
+  }
+}
+
+function myFunction3() {
+  var space3 = document.getElementById("space3");
+  var moreText3 = document.getElementById("more3");
+  var btnText3 = document.getElementById("myBtn3");
+
+  if (space3.style.display === "none") {
+    space3.style.display = "inline";
+    btnText3.innerHTML = "more"; 
+    moreText3.style.display = "none";
+  } else {
+    space3.style.display = "none";
+    btnText3.innerHTML = "less"; 
+    moreText3.style.display = "inline";
+  }
+}
+
+const currentDate = new Date();
+const options = { day: 'numeric', month: 'long', year: 'numeric', weekday: 'long' };
+const formattedDate = currentDate.toLocaleDateString(undefined, options);
+
+document.write("<div style='text-align:center; color:white; font-weight:bold; background-color:gray;'> " + formattedDate + "</div>");
+
+</script>
 <main>
 
 <h2>Tutors</h2>
@@ -93,8 +175,14 @@
   <pre>                     -Saud</pre>
   <pre>                     -Faisal</pre>
   <pre>                     -Arwa</pre>
-  <pre>                     -Basma</pre>
-  <pre style="text-decoration:underline;">more</pre>
+  <pre>                     -Basma<span id="space"></span><span id="more"><br>
+                     -Dana<br>
+	             -Yusra<br>
+	             -Lama
+  </span>
+  </pre>
+  <button onclick="myFunction()" id="myBtn">more</button>
+
   
   </div>
   <div class="b">
@@ -105,8 +193,15 @@
   <pre>                     -Lulu</pre>
   <pre>                     -Abdualziz</pre>
   <pre>                     -Yousef</pre>
-  <pre>                     -Dalia</pre>
-  <pre style="text-decoration:underline;">more</pre>
+  <pre>                     -Dalia<span id="space2"></span><span id="more2"><br>
+                     -Talal<br>
+		     -Renad<br>
+	             -Leena<br>
+	             -Ahmad
+  
+  </span>
+  </pre>
+  <button onclick="myFunction2()" id="myBtn2">more</button>
   
   </div>
   <div class="c">
@@ -117,8 +212,14 @@
   <pre>                     -Rawan</pre>
   <pre>                     -Shahad</pre>
   <pre>                     -Muneera</pre>
-  <pre>                     -Madawi</pre>
-  <pre style="text-decoration:underline;">more</pre>
+  <pre>                     -Madawi<span id="space3"></span><span id="more3"><br>
+                     -Omar<br> 
+		     -Muhannad
+					
+  
+  </span> 
+  </pre>
+  <button onclick="myFunction3()" id="myBtn3">more</button>
   
   </div>  
   <div class="d">
@@ -130,7 +231,7 @@
   <pre>                     -Shahad</pre>
   <pre>                     -Muneera</pre>
   <pre>                     -Madawi</pre>
-  <pre style="text-decoration:underline;">more</pre>
+  
   
   </div>  
   <div class="e">
@@ -142,7 +243,7 @@
   <pre>                     -Abdualziz</pre>
   <pre>                     -Yousef</pre>
   <pre>                     -Dalia</pre>
-  <pre style="text-decoration:underline;">more</pre>
+  
   
   </div>
 </div>
