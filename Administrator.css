@@ -2,14 +2,14 @@
 h2 {
 	text-align:center;
 	font-family: Arial, sans-serif;
-  color: var(--tertiary-color);
+  color: #008000;
   font-size: 200%;
-  text-shadow: 2px 2px 4px var(--12-color);
+  text-shadow: 2px 2px 4px black;
 
 }
 
 body main{
-  background-image: var(--lightimage);
+  background-image:url("images/WALLPAPER.jpg");
 }
 
 header {
@@ -17,27 +17,27 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 1px 10px;
-    background-color: var(--11-color);
+    background-color: #FFFAF2;
     
 }
 
 .header-text {
   margin-right:75%;
-  color: var(--14-color);
+  color:#A8DB73;
   font-size: 200%;
-  text-shadow: 2px 2px 4px var(--14-color); 
+  text-shadow: 2px 2px 4px #A8DB73; 
   white-space: nowrap;
 }
 
 .subtext {
   font-size: 50%;
-  color: var(--15-color);
-  text-shadow: 2px 2px 4px var(--15-color); 
+  color: #FACB07;
+  text-shadow: 2px 2px 4px #FACB07; 
 }
 
 
 body{
-background-color: var(--11-color);
+background-color: #FFFAF2;
 font-family: Arial, sans-serif;
 margin:0;
 }
@@ -54,7 +54,7 @@ nav ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: var(--nonary-color);
+  background-color: #A8DB73;
 }
 
 
@@ -66,7 +66,7 @@ nav li {
 
 nav li a {
   display: block;
-  color: var(--primary-color);
+  color: white;
   text-align: center;
   padding: 14px 127.41px;
   text-decoration: none;
@@ -74,7 +74,7 @@ nav li a {
 }
 
 nav li a:hover {
-  background-color: var(--13-color);
+  background-color:#54B337;
 }
 
 
@@ -82,7 +82,7 @@ ul.breadcrumb {
     padding: 3px 30px;
     margin: 0;
     list-style: none;
-    background-color: var(--11-color) ;
+    background-color:#FFFAF2 ;
     display: flex;
   }
   
@@ -95,7 +95,7 @@ ul.breadcrumb {
   
   ul.breadcrumb li+li:before {
     padding: 0 0px; /* Adjust the padding value as per your preference */
-    color: var(--12-color);
+    color: black;
     content: ">\00a0";
   }
   
@@ -104,12 +104,12 @@ ul.breadcrumb {
   }
   
   ul.breadcrumb li a {
-    color: var(--denary-color);
+    color: orange;
     text-decoration: none;
   }
   
   ul.breadcrumb li a:hover {
-    color: var(--denary-color);
+    color: orange;
     text-decoration: underline;
 }
 
@@ -118,8 +118,8 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--nonary-color);
-  color: var(--primary-color);
+  background-color: #A8DB73;
+  color: white;
   text-align: center;
   padding: 15px;
 }
@@ -129,67 +129,67 @@ footer p {
 }
 
 a {
-  color:var(--secondary-color);
+  color:#212121;
 }
 
 .tutors-container {
     overflow-x: scroll;
     white-space: nowrap;
-	background-color:var(--octonary-color);
+	background-color:#9D8189;
 	width: 1100px;
 	margin:auto;
   }
 
   .tutor1 {
-	color: var(--secondary-color);
+	color: #212121;
     display: inline-block;
     width: 300px;
     padding: 20px;
     text-align: left;
-    background-color: var(--quaternary-color);
+    background-color: #D8E2DC;
   }
   
   .tutor2 {
-	  color: var(--secondary-color);
+	  color:#212121;
     display: inline-block;
     width: 300px;
     padding: 20px;
     text-align: left;
-    background-color: var(--quinary-color);
+    background-color: #FFE5D9;
   }
   
   .tutor3 {
-	  color: var(--secondary-color);
+	  color: #212121;
     display: inline-block;
     width: 300px;
     padding: 20px;
     text-align: left;
-    background-color: var(--senary-color);
+    background-color: #FFCAD4;
   }
   
   .tutor4 {
-	  color: var(--secondary-color);
+	  color: #212121;
     display: inline-block;
     width: 300px;
     padding: 20px;
     text-align: left;
-    background-color: var(--quaternary-color);
+    background-color: #D8E2DC;
   }
   
   .tutor5 {
-	  color: var(--secondary-color);
+	  color: #212121;
     display: inline-block;
     width: 300px;
     padding: 20px;
     text-align: left;
-    background-color: var(--quinary-color);
+    background-color: #FFE5D9;
   }
 
 
   div.students {
-  color: var(--secondary-color);
+  color: #212121;
   margin: auto;
-  background-color: var(--septenary-color);
+  background-color: #F4ACB7;
   height: 100px;
   width: 1100px;
   overflow-y: scroll;
@@ -198,7 +198,7 @@ a {
 
 .flex-container {
   display: flex;
-  background-color: var(--octonary-color);
+  background-color:#9D8189;
   width:1100px;
   height:300px;
   overflow-x: auto;
@@ -206,7 +206,7 @@ a {
 }
 
 .flex-container > div {
-	color: var(--secondary-color);
+	color:#212121;
   background-color: #f1f1f1;
   margin: 10px;
   width: 500px;
@@ -217,121 +217,70 @@ a {
 }
 
 div.a{
-	color: var(--secondary-color);
-	background-color:var(--quaternary-color);
+	color:#212121;
+	background-color:#D8E2DC;
 	width: 250px;
 	flex-shrink:0;
 	
 }
 div.a pre{
-	color: var(--secondary-color);
+	color: #212121;
 	font-family: Arial, sans-serif;
 
 }
 
 div.b{
-	color: var(--secondary-color);
-	background-color:var(--quinary-color);
+	color: #212121;
+	background-color:#FFE5D9;
 	width: 250px;
 	flex-shrink:0;
 	
 }
 div.b pre{
-	color: var(--secondary-color);
+	color: #212121;
 	font-family: Arial, sans-serif;
 	}
 
 div.c{
-	color: var(--secondary-color);
-	background-color: var(--senary-color);
+	color: #212121;
+	background-color: #FFCAD4;
 	width: 250px;
 	flex-shrink:0;
 	
 }
 div.c pre{
-	color: var(--secondary-color);
+	color: #212121;
 	font-family: Arial, sans-serif;
 	
 }
 
 div.d{
-	color: var(--secondary-color);
-	background-color:var(--quaternary-color);
+	color: #212121;
+	background-color:#D8E2DC;
 	width: 250px;
 	flex-shrink:0;
 	
 }
 div.d pre{
-	color: var(--secondary-color);
+	color: #212121;
 	font-family: Arial, sans-serif;
 	}
 
 div.e{
-	color: var(--secondary-color);
-	background-color:var(--quinary-color);
+	color:#212121;
+	background-color:#FFE5D9;
 	width: 250px;
 	flex-shrink:0;
 	
 }
 
 div.e pre{
-	color: var(--secondary-color);
+	color: #212121;
 	font-family: Arial, sans-serif;
 	}
 
-
-
-#icon{
-	width:30px;
-	height:30px;
-	cursor:pointer;
-}
 
 #more {display: none;}
 #more2 {display: none;}
 #more3 {display: none;}
 
-
-:root{
-	--primary-color: white;
-	--secondary-color:#212121;
-	--tertiary-color:#008000;
-	--quaternary-color:#D8E2DC;
-	--quinary-color:#FFE5D9;
-	--senary-color:#FFCAD4;
-	--septenary-color:#F4ACB7;
-	--octonary-color:#9D8189;
-	--nonary-color:#A8DB73;
-	--denary-color:orange;
-	--11-color:#FFFAF2;
-	--12-color:black;
-	--13-color:#54B337;
-	--14-color:#A8DB73;
-	--15-color:#FACB07;
-	--lightimage:url("images/WALLPAPER.jpg");
-	
-
-}
-
-.dark-theme{
-	
-	--primary-color: black;
-	--secondary-color:#dedede;
-	--tertiary-color:#ff7fff;
-	--quaternary-color:#271d23;
-	--quinary-color:#001a26;
-	--senary-color:#00352b;
-	--septenary-color:#0b5348;
-	--octonary-color: #627e76;
-	--nonary-color:#57248c;
-	--denary-color:#005aff;
-	--11-color:black;
-	--12-color:white;
-	--13-color:#ab4cc8;
-	--14-color:#57248c;
-	--15-color:#0534f8;
-    --lightimage:url("images/WALLPAPERblack.png");
-	
-	
-
-}
