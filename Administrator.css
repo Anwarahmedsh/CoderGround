@@ -2,68 +2,194 @@
 h2 {
 	text-align:center;
 	font-family: Arial, sans-serif;
-  color: #008000;
+  color: var(--tertiary-color);
   font-size: 200%;
-  text-shadow: 2px 2px 4px black;
+  text-shadow: 2px 2px 4px var(--12-color);
 
 }
 
 body main{
-  background-image: url("Images/WALLPAPER.jpg");
+  background-image: var(--lightimage);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1px 10px;
+    background-color: var(--11-color);
+    
+}
+
+.header-text {
+  margin-right:75%;
+  color: var(--14-color);
+  font-size: 200%;
+  text-shadow: 2px 2px 4px var(--14-color); 
+  white-space: nowrap;
+}
+
+.subtext {
+  font-size: 50%;
+  color: var(--15-color);
+  text-shadow: 2px 2px 4px var(--15-color); 
+}
+
+
+body{
+background-color: var(--11-color);
+font-family: Arial, sans-serif;
+margin:0;
+}
+
+
+nav {
+  display: flex;
+  justify-content: center;
+}
+
+nav ul {
+	
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--nonary-color);
+}
+
+
+nav li {
+	
+  float: left;
+}
+
+
+nav li a {
+  display: block;
+  color: var(--primary-color);
+  text-align: center;
+  padding: 14px 127.41px;
+  text-decoration: none;
+ 
+}
+
+nav li a:hover {
+  background-color: var(--13-color);
+}
+
+
+ul.breadcrumb {
+    padding: 3px 30px;
+    margin: 0;
+    list-style: none;
+    background-color: var(--11-color) ;
+    display: flex;
+  }
+  
+  ul.breadcrumb li {
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    margin-right: 5px; /* Adjust the second one */
+  }
+  
+  ul.breadcrumb li+li:before {
+    padding: 0 0px; /* Adjust the padding value as per your preference */
+    color: var(--12-color);
+    content: ">\00a0";
+  }
+  
+  ul.breadcrumb li:first-child a {
+    padding-left: 0;
+  }
+  
+  ul.breadcrumb li a {
+    color: var(--denary-color);
+    text-decoration: none;
+  }
+  
+  ul.breadcrumb li a:hover {
+    color: var(--denary-color);
+    text-decoration: underline;
+}
+
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--nonary-color);
+  color: var(--primary-color);
+  text-align: center;
+  padding: 15px;
+}
+
+footer p {
+  margin: 5px;
+}
+
+a {
+  color:var(--secondary-color);
 }
 
 .tutors-container {
     overflow-x: scroll;
     white-space: nowrap;
-	background-color:#9D8189;
+	background-color:var(--octonary-color);
 	width: 1100px;
 	margin:auto;
   }
 
   .tutor1 {
+	color: var(--secondary-color);
     display: inline-block;
     width: 300px;
     padding: 20px;
     text-align: left;
-    background-color: #D8E2DC;
+    background-color: var(--quaternary-color);
   }
   
   .tutor2 {
+	  color: var(--secondary-color);
     display: inline-block;
     width: 300px;
     padding: 20px;
     text-align: left;
-    background-color: #FFE5D9;
+    background-color: var(--quinary-color);
   }
   
   .tutor3 {
+	  color: var(--secondary-color);
     display: inline-block;
     width: 300px;
     padding: 20px;
     text-align: left;
-    background-color: #FFCAD4;
+    background-color: var(--senary-color);
   }
   
   .tutor4 {
+	  color: var(--secondary-color);
     display: inline-block;
     width: 300px;
     padding: 20px;
     text-align: left;
-    background-color: #D8E2DC;
+    background-color: var(--quaternary-color);
   }
   
   .tutor5 {
+	  color: var(--secondary-color);
     display: inline-block;
     width: 300px;
     padding: 20px;
     text-align: left;
-    background-color: #FFE5D9;
+    background-color: var(--quinary-color);
   }
 
 
   div.students {
+  color: var(--secondary-color);
   margin: auto;
-  background-color: #F4ACB7;
+  background-color: var(--septenary-color);
   height: 100px;
   width: 1100px;
   overflow-y: scroll;
@@ -72,7 +198,7 @@ body main{
 
 .flex-container {
   display: flex;
-  background-color: #9D8189;
+  background-color: var(--octonary-color);
   width:1100px;
   height:300px;
   overflow-x: auto;
@@ -80,6 +206,7 @@ body main{
 }
 
 .flex-container > div {
+	color: var(--secondary-color);
   background-color: #f1f1f1;
   margin: 10px;
   width: 500px;
@@ -90,42 +217,121 @@ body main{
 }
 
 div.a{
-	background-color:#D8E2DC;
+	color: var(--secondary-color);
+	background-color:var(--quaternary-color);
 	width: 250px;
 	flex-shrink:0;
 	
 }
-div.a pre{font-family: Arial, sans-serif;}
+div.a pre{
+	color: var(--secondary-color);
+	font-family: Arial, sans-serif;
+
+}
 
 div.b{
-	background-color:#FFE5D9;
+	color: var(--secondary-color);
+	background-color:var(--quinary-color);
 	width: 250px;
 	flex-shrink:0;
 	
 }
-div.b pre{font-family: Arial, sans-serif;}
+div.b pre{
+	color: var(--secondary-color);
+	font-family: Arial, sans-serif;
+	}
 
 div.c{
-	background-color:#FFCAD4;
+	color: var(--secondary-color);
+	background-color: var(--senary-color);
 	width: 250px;
 	flex-shrink:0;
 	
 }
-div.c pre{font-family: Arial, sans-serif;}
+div.c pre{
+	color: var(--secondary-color);
+	font-family: Arial, sans-serif;
+	
+}
 
 div.d{
-	background-color:#D8E2DC;
+	color: var(--secondary-color);
+	background-color:var(--quaternary-color);
 	width: 250px;
 	flex-shrink:0;
 	
 }
-div.d pre{font-family: Arial, sans-serif;}
+div.d pre{
+	color: var(--secondary-color);
+	font-family: Arial, sans-serif;
+	}
 
 div.e{
-	background-color:#FFE5D9;
+	color: var(--secondary-color);
+	background-color:var(--quinary-color);
 	width: 250px;
 	flex-shrink:0;
 	
 }
 
-div.e pre{font-family: Arial, sans-serif;}
+div.e pre{
+	color: var(--secondary-color);
+	font-family: Arial, sans-serif;
+	}
+
+
+
+#icon{
+	width:30px;
+	height:30px;
+	cursor:pointer;
+}
+
+#more {display: none;}
+#more2 {display: none;}
+#more3 {display: none;}
+
+
+:root{
+	--primary-color: white;
+	--secondary-color:#212121;
+	--tertiary-color:#008000;
+	--quaternary-color:#D8E2DC;
+	--quinary-color:#FFE5D9;
+	--senary-color:#FFCAD4;
+	--septenary-color:#F4ACB7;
+	--octonary-color:#9D8189;
+	--nonary-color:#A8DB73;
+	--denary-color:orange;
+	--11-color:#FFFAF2;
+	--12-color:black;
+	--13-color:#54B337;
+	--14-color:#A8DB73;
+	--15-color:#FACB07;
+	--lightimage:url("images/WALLPAPER.jpg");
+	
+
+}
+
+.dark-theme{
+	
+	--primary-color: black;
+	--secondary-color:#dedede;
+	--tertiary-color:#ff7fff;
+	--quaternary-color:#271d23;
+	--quinary-color:#001a26;
+	--senary-color:#00352b;
+	--septenary-color:#0b5348;
+	--octonary-color: #627e76;
+	--nonary-color:#57248c;
+	--denary-color:#005aff;
+	--11-color:black;
+	--12-color:white;
+	--13-color:#ab4cc8;
+	--14-color:#57248c;
+	--15-color:#0534f8;
+    --lightimage:url("images/WALLPAPERblack.png");
+	
+	
+
+}
