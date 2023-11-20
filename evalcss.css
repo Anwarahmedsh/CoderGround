@@ -1,0 +1,85 @@
+body{
+  background-color: #FFFAF2;
+  font-family: Arial,sans-serif;
+  text-align: center;
+  margin:0;
+  }
+div ul{
+	list-style-type: none;
+	display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 100px;
+	font-size: 12px;
+}
+
+
+  
+  label {
+  font-size: 120%;
+  }
+  
+  
+  select {
+  font-size: larger; 
+  padding: 5px; 
+}
+  
+  
+  #right-label {
+    margin-right: 29%;
+    margin-left: 29%;
+  }
+  
+  #left-label {
+    margin-left:120%;}
+	
+
+
+table{
+	
+  background-color: white;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  text-align: center;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
+  width: 0px;
+}
+
+td,tr {
+  border: 2px solid #dddddd;
+  text-align: center;
+  padding: 10px 34px;
+}
+
+
+
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.large-button {
+  width: 80px; 
+  height: 40px;
+  font-size: 90%;
+}
+
+.course-eavalution{
+	
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1px 100px;
+}
+h2 {
+	text-align:center;
+	font-family: Arial, sans-serif;
+  color: #008000;
+  font-size: 200%;
+  text-shadow: 2px 2px 4px black;
+
+}
