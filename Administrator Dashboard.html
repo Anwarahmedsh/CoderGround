@@ -28,36 +28,8 @@
           <li><a href="courses.html" accesskey="c">current courses</a></li>
           <li><a href="tutors.html" accesskey="t">tutors</a></li>
       </ul>
-	  <img src="images/moon.png" id="icon">
     </nav>
 <script>
-var icon = document.getElementById("icon");
-var isDarkMode = localStorage.getItem('darkMode') === 'true';
-
-// Function to toggle dark mode
-function toggleDarkMode() {
-  document.body.classList.toggle("dark-theme");
-  isDarkMode = !isDarkMode; // Toggle the mode
-  localStorage.setItem('darkMode', isDarkMode); // Save the mode in localStorage
-  if (document.body.classList.contains("dark-theme")) {
-    icon.src = "images/sun.png";
-  } else {
-    icon.src = "images/moon.png";
-  }
-}
-
-// Apply dark mode based on user's preference
-if (isDarkMode) {
-  document.body.classList.add("dark-theme");
-  icon.src = "images/sun.png";
-} else {
-  document.body.classList.remove("dark-theme");
-  icon.src = "images/moon.png";
-}
-
-// Event listener for clicking the icon to toggle dark mode
-icon.onclick = toggleDarkMode;
-
 function myFunction() {
   var space = document.getElementById("space");
   var moreText = document.getElementById("more");
