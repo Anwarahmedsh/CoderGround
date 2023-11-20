@@ -1,0 +1,131 @@
+
+h2 {
+	text-align:center;
+	font-family: Arial, sans-serif;
+  color: #008000;
+  font-size: 200%;
+  text-shadow: 2px 2px 4px black;
+
+}
+
+body main{
+  background-image: url("Images/WALLPAPER.jpg");
+}
+
+.tutors-container {
+    overflow-x: scroll;
+    white-space: nowrap;
+	background-color:#9D8189;
+	width: 1100px;
+	margin:auto;
+  }
+
+  .tutor1 {
+    display: inline-block;
+    width: 300px;
+    padding: 20px;
+    text-align: left;
+    background-color: #D8E2DC;
+  }
+  
+  .tutor2 {
+    display: inline-block;
+    width: 300px;
+    padding: 20px;
+    text-align: left;
+    background-color: #FFE5D9;
+  }
+  
+  .tutor3 {
+    display: inline-block;
+    width: 300px;
+    padding: 20px;
+    text-align: left;
+    background-color: #FFCAD4;
+  }
+  
+  .tutor4 {
+    display: inline-block;
+    width: 300px;
+    padding: 20px;
+    text-align: left;
+    background-color: #D8E2DC;
+  }
+  
+  .tutor5 {
+    display: inline-block;
+    width: 300px;
+    padding: 20px;
+    text-align: left;
+    background-color: #FFE5D9;
+  }
+
+
+  div.students {
+  margin: auto;
+  background-color: #F4ACB7;
+  height: 100px;
+  width: 1100px;
+  overflow-y: scroll;
+  font-family: Arial, sans-serif;
+}
+
+.flex-container {
+  display: flex;
+  background-color: #9D8189;
+  width:1100px;
+  height:300px;
+  overflow-x: auto;
+  margin:auto;
+}
+
+.flex-container > div {
+  background-color: #f1f1f1;
+  margin: 10px;
+  width: 500px;
+  padding: 20px;
+  font-size: 15px;
+   overflow-y: scroll;
+   
+}
+
+div.a{
+	background-color:#D8E2DC;
+	width: 250px;
+	flex-shrink:0;
+	
+}
+div.a pre{font-family: Arial, sans-serif;}
+
+div.b{
+	background-color:#FFE5D9;
+	width: 250px;
+	flex-shrink:0;
+	
+}
+div.b pre{font-family: Arial, sans-serif;}
+
+div.c{
+	background-color:#FFCAD4;
+	width: 250px;
+	flex-shrink:0;
+	
+}
+div.c pre{font-family: Arial, sans-serif;}
+
+div.d{
+	background-color:#D8E2DC;
+	width: 250px;
+	flex-shrink:0;
+	
+}
+div.d pre{font-family: Arial, sans-serif;}
+
+div.e{
+	background-color:#FFE5D9;
+	width: 250px;
+	flex-shrink:0;
+	
+}
+
+div.e pre{font-family: Arial, sans-serif;}

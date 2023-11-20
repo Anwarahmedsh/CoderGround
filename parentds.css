@@ -1,0 +1,89 @@
+.section-title {
+  padding: 3px 30px;
+  text-align: center;
+  font-style: italic;
+}
+
+.students-container {
+    overflow-x: scroll;
+    white-space: nowrap;
+    background-color: black; /* Set the background color of the scroll bar area */
+    margin-left: 10px;
+  }
+  
+  .student {
+    display: inline-block;
+    width: 300px;
+    padding: 20px;
+    margin: 10px;
+    margin-left: 10px;
+    margin-right:10px ;
+    text-align: center;
+    background-color: #f2f2f2;
+  }
+  
+  .student img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+  .student h3 {
+    margin: 0;
+  }
+  
+  .student p {
+    font-style: italic;
+    margin-top: 10px;
+  }
+
+
+  /* Apply styles to the container div */
+.container {
+    display: flex;
+  }
+  
+  /* Apply styles to the div elements with class "styled-div" */
+  .styled-div {
+    background-color: #f2f2f2;
+    border: 2px solid black;
+    padding: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    flex: 1;
+  }
+  
+  /* Apply styles to the img elements with class "styled-img" */
+  .styled-img {
+    width: 200px; /* Set the desired width */
+    height: 200px; /* Set the desired height */
+    object-fit: cover;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+    border-radius: 50%;  
+  }
+  
+  /* Apply styles to the h3 elements with class "styled-h3" */
+  .styled-h3 {
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  /* Apply styles to the a elements with class "styled-a" */
+  .styled-a {
+    color: black;
+    text-decoration: none;
+  }
+  
+h2 {
+	text-align:center;
+	font-family: Arial, sans-serif;
+  color: #008000;
+  font-size: 200%;
+  text-shadow: 2px 2px 4px black;
+
+}

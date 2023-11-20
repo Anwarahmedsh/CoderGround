@@ -1,0 +1,115 @@
+
+body{
+background-color: #FFFAF2;
+font-family: Arial,sans-serif;
+text-align: center;
+margin:0;
+}
+.cell {
+  position: relative;
+  
+}
+
+.green-button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: green;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+h3 {
+	text-align:center;
+	font-family: Arial, sans-serif;
+  color: #008000;
+  font-size: 200%;
+  text-shadow: 2px 2px 4px black;
+
+}
+
+table {
+	
+  width: 70%;
+  border-collapse: collapse; 
+  margin-left: 15%;
+  
+}
+
+td {
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  margin-right: 10px;
+}
+
+h2 {
+  margin-top: 10px;
+}
+
+p {
+  margin-top: 5px;
+}
+
+
+.search-container {
+  margin-bottom: 20px;
+}
+
+.search-container input[type="text"] {
+  width: 400px; /* Adjust the width as needed */
+  padding: 10px;
+  font-size: 16px;
+}
+
+ul.breadcrumb {
+    padding: 3px 30px;
+    margin: 0;
+    list-style: none;
+    background-color: #FFFAF2 ;
+    display: flex;
+  }
+  
+  ul.breadcrumb li {
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    margin-right: 5px; /* Adjust the second one */
+  }
+  
+  ul.breadcrumb li+li:before {
+    padding: 0 0px; /* Adjust the padding value as per your preference */
+    color: black;
+    content: ">\00a0";
+  }
+  
+  ul.breadcrumb li:first-child a {
+    padding-left: 0;
+  }
+  
+  ul.breadcrumb li a {
+    color: orange;
+    text-decoration: none;
+  }
+  
+  ul.breadcrumb li a:hover {
+    color: orange;
+    text-decoration: underline;
+}
