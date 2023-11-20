@@ -65,6 +65,43 @@
           </div>
       </div>
 </main>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      // Check local storage for parent's children
+      var storedKids = JSON.parse(localStorage.getItem("parentKids"));
+
+      // If no children are stored, add two default children
+      if (!storedKids) {
+          storedKids = ["Child1", "Child2"];
+          localStorage.setItem("parentKids", JSON.stringify(storedKids));
+      }
+
+      // Display children on the dashboard
+      displayChildren(storedKids);
+  });
+
+  function displayChildren(kids) {
+      var kidsContainer = document.getElementById("kidsContainer");
+
+      // Clear existing content
+      kidsContainer.innerHTML = "";
+
+      // Display each child dynamically
+      kids.forEach(function(childName) {
+          var childDiv = document.createElement("div");
+          childDiv.classList.add("student");
+
+          childDiv.innerHTML = `
+              <img src="images\default-avatar.png" alt="${childName}">
+              <h3>${childName}</h3>
+              <p>Age: (Set age dynamically)</p>
+              <p>Interests: (Set interests dynamically)</p>
+          `;
+
+          kidsContainer.appendChild(childDiv);
+      });
+  }
+</script>
 <br>
 <br>
 <br>
