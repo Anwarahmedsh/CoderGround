@@ -1,0 +1,70 @@
+
+
+h2 {
+	text-align:center;
+}
+
+
+table, th,td {
+	font-family: Arial;
+	border : 1px solid black ;
+	text-align:center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 20px;
+}
+
+
+
+
+caption{
+
+  color: #008000;
+  font-size: 200%;
+  text-shadow: 2px 2px 4px black;
+	 
+}
+
+
+thead th{
+border: 1px solid black;
+	background-color: black;
+color:white;
+padding:10px;
+}
+
+tbody td{
+	background-color: white;
+	padding:10px;
+		border: 1px solid black;
+
+
+}
+
+body main{
+  background-image: url("Images/WALLPAPER.jpg");
+}
+
+table{ background-color:#FFFDF3;}
+
+.time{  background-color:#FFFDF3;
+	
+}
+
+.blank{ background-color: #A4A4A4;}
+
+.scratch{
+	background-color:#FF6666
+}
+
+.robo{
+	background-color: #7A9AFF
+	
+}
+
+.python{
+	background-color: #FFD073
+}
+
+
+

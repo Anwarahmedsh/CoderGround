@@ -1,0 +1,66 @@
+
+  .section-title {
+    padding: 3px 30px;
+   text-align: center;
+  }
+
+  .font-body{
+    background-color: #FFFAF2;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  
+  .container {
+  inline-size: min(100% - 4rem, 70rem);
+  margin-inline: auto;
+  }
+  
+  .flow {
+  display: grid;
+  gap: var(--size-3);
+  }
+  
+  
+  .tutors-container {
+  overflow-x: scroll;
+  white-space: nowrap;
+  background-color: black;
+  margin-left: 20px;
+  margin-right: 20px;
+  }
+  
+  .tutor {
+  display: inline-block;
+  width: 335px;
+  padding: 30px;
+  margin: 10px;
+  text-align: center;
+  background-color: #f2f2f2;
+  }
+  
+  .tutor img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  }
+  
+  .tutor h3 {
+  margin: 0;
+  }
+  
+  .tutor p {
+  font-style: italic;
+  margin-top: 10px;
+  }
+  
+  h2 {
+    text-align:center;
+    font-family: Arial, sans-serif;
+    color: #008000;
+    font-size: 200%;
+    text-shadow: 2px 2px 4px black;
+  
+  }
