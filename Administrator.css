@@ -2,14 +2,14 @@
 h2 {
 	text-align:center;
 	font-family: Arial, sans-serif;
-  color: #008000;
+  color: var(--3-color);
   font-size: 200%;
-  text-shadow: 2px 2px 4px black;
+  text-shadow: 2px 2px 4px var(--12-color);
 
 }
 
 body main{
-  background-image:url("images/WALLPAPER.jpg");
+  background-image: var(--lightimage);
 }
 
 header {
@@ -17,27 +17,27 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 1px 10px;
-    background-color: #FFFAF2;
+    background-color: var(--11-color);
     
 }
 
 .header-text {
   margin-right:75%;
-  color:#A8DB73;
+  color: var(--14-color);
   font-size: 200%;
-  text-shadow: 2px 2px 4px #A8DB73; 
+  text-shadow: 2px 2px 4px var(--14-color); 
   white-space: nowrap;
 }
 
 .subtext {
   font-size: 50%;
-  color: #FACB07;
-  text-shadow: 2px 2px 4px #FACB07; 
+  color: var(--15-color);
+  text-shadow: 2px 2px 4px var(--15-color); 
 }
 
 
 body{
-background-color: #FFFAF2;
+background-color: var(--11-color);
 font-family: Arial, sans-serif;
 margin:0;
 }
@@ -54,7 +54,7 @@ nav ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #A8DB73;
+  background-color: var(--9-color);
 }
 
 
@@ -66,7 +66,7 @@ nav li {
 
 nav li a {
   display: block;
-  color: white;
+  color: var(--1-color);
   text-align: center;
   padding: 14px 127.41px;
   text-decoration: none;
@@ -74,7 +74,7 @@ nav li a {
 }
 
 nav li a:hover {
-  background-color:#54B337;
+  background-color: var(--13-color);
 }
 
 
@@ -82,7 +82,7 @@ ul.breadcrumb {
     padding: 3px 30px;
     margin: 0;
     list-style: none;
-    background-color:#FFFAF2 ;
+    background-color: var(--11-color) ;
     display: flex;
   }
   
@@ -95,7 +95,7 @@ ul.breadcrumb {
   
   ul.breadcrumb li+li:before {
     padding: 0 0px; /* Adjust the padding value as per your preference */
-    color: black;
+    color: var(--12-color);
     content: ">\00a0";
   }
   
@@ -104,12 +104,12 @@ ul.breadcrumb {
   }
   
   ul.breadcrumb li a {
-    color: orange;
+    color: var(--10-color);
     text-decoration: none;
   }
   
   ul.breadcrumb li a:hover {
-    color: orange;
+    color: var(--10-color);
     text-decoration: underline;
 }
 
@@ -118,8 +118,8 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #A8DB73;
-  color: white;
+  background-color: var(--9-color);
+  color: var(--1-color);
   text-align: center;
   padding: 15px;
 }
@@ -129,67 +129,67 @@ footer p {
 }
 
 a {
-  color:#212121;
+  color:var(--2-color);
 }
 
 .tutors-container {
     overflow-x: scroll;
     white-space: nowrap;
-	background-color:#9D8189;
+	background-color:var(--8-color);
 	width: 1100px;
 	margin:auto;
   }
 
   .tutor1 {
-	color: #212121;
+	color: var(--2-color);
     display: inline-block;
     width: 300px;
     padding: 20px;
     text-align: left;
-    background-color: #D8E2DC;
+    background-color: var(--4-color);
   }
   
   .tutor2 {
-	  color:#212121;
+	  color: var(--2-color);
     display: inline-block;
     width: 300px;
     padding: 20px;
     text-align: left;
-    background-color: #FFE5D9;
+    background-color: var(--5-color);
   }
   
   .tutor3 {
-	  color: #212121;
+	  color: var(--2-color);
     display: inline-block;
     width: 300px;
     padding: 20px;
     text-align: left;
-    background-color: #FFCAD4;
+    background-color: var(--6-color);
   }
   
   .tutor4 {
-	  color: #212121;
+	  color: var(--2-color);
     display: inline-block;
     width: 300px;
     padding: 20px;
     text-align: left;
-    background-color: #D8E2DC;
+    background-color: var(--4-color);
   }
   
   .tutor5 {
-	  color: #212121;
+	  color: var(--2-color);
     display: inline-block;
     width: 300px;
     padding: 20px;
     text-align: left;
-    background-color: #FFE5D9;
+    background-color: var(--5-color);
   }
 
 
   div.students {
-  color: #212121;
+  color: var(--2-color);
   margin: auto;
-  background-color: #F4ACB7;
+  background-color: var(--7-color);
   height: 100px;
   width: 1100px;
   overflow-y: scroll;
@@ -198,7 +198,7 @@ a {
 
 .flex-container {
   display: flex;
-  background-color:#9D8189;
+  background-color: var(--8-color);
   width:1100px;
   height:300px;
   overflow-x: auto;
@@ -206,7 +206,7 @@ a {
 }
 
 .flex-container > div {
-	color:#212121;
+	color: var(--2-color);
   background-color: #f1f1f1;
   margin: 10px;
   width: 500px;
@@ -217,70 +217,122 @@ a {
 }
 
 div.a{
-	color:#212121;
-	background-color:#D8E2DC;
+	color: var(--2-color);
+	background-color:var(--4-color);
 	width: 250px;
 	flex-shrink:0;
 	
 }
 div.a pre{
-	color: #212121;
+	color: var(--2-color);
 	font-family: Arial, sans-serif;
 
 }
 
 div.b{
-	color: #212121;
-	background-color:#FFE5D9;
+	color: var(--2-color);
+	background-color:var(--5-color);
 	width: 250px;
 	flex-shrink:0;
 	
 }
 div.b pre{
-	color: #212121;
+	color: var(--2-color);
 	font-family: Arial, sans-serif;
 	}
 
 div.c{
-	color: #212121;
-	background-color: #FFCAD4;
+	color: var(--2-color);
+	background-color: var(--6-color);
 	width: 250px;
 	flex-shrink:0;
 	
 }
 div.c pre{
-	color: #212121;
+	color: var(--2-color);
 	font-family: Arial, sans-serif;
 	
 }
 
 div.d{
-	color: #212121;
-	background-color:#D8E2DC;
+	color: var(--2-color);
+	background-color:var(--4-color);
 	width: 250px;
 	flex-shrink:0;
 	
 }
 div.d pre{
-	color: #212121;
+	color: var(--2-color);
 	font-family: Arial, sans-serif;
 	}
 
 div.e{
-	color:#212121;
-	background-color:#FFE5D9;
+	color: var(--2-color);
+	background-color:var(--5-color);
 	width: 250px;
 	flex-shrink:0;
 	
 }
 
 div.e pre{
-	color: #212121;
+	color: var(--2-color);
 	font-family: Arial, sans-serif;
 	}
 
+
+
+#icon{
+	width:30px;
+	height:30px;
+	cursor:pointer;
+}
 
 #more {display: none;}
 #more2 {display: none;}
 #more3 {display: none;}
 
+
+
+:root{
+	--1-color: white;
+	--2-color:#212121;
+	--3-color:#008000;
+	--4-color:#D8E2DC;
+	--5-color:#FFE5D9;
+	--6-color:#FFCAD4;
+	--7-color:#F4ACB7;
+	--8-color:#9D8189;
+	--9-color:#A8DB73;
+	--10-color:orange;
+	--11-color:#FFFAF2;
+	--12-color:black;
+	--13-color:#54B337;
+	--14-color:#A8DB73;
+	--15-color:#FACB07;
+	--lightimage:url("images/WALLPAPER.jpg");
+	
+
+}
+
+.dark-theme{
+	
+	--1-color: black;
+	--2-color:#dedede;
+	--3-color:#ff7fff;
+	--4-color:#271d23;
+	--5-color:#001a26;
+	--6-color:#00352b;
+	--7-color:#0b5348;
+	--8-color: #627e76;
+	--9-color:#57248c;
+	--10-color:#005aff;
+	--11-color:#000916;
+	--12-color:white;
+	--13-color:#ab4cc8;
+	--14-color:#57248c;
+	--15-color:#0534f8;
+    --lightimage:url("images/WALLPAPERblack.png");
+	
+	
+
+}
