@@ -1,13 +1,12 @@
-
-body{
-background-color: #FFFAF2;
-font-family: Arial,sans-serif;
-text-align: center;
-margin:0;
+body {
+  background-color: #FFFAF2;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
 }
+
 .cell {
   position: relative;
-  
 }
 
 .green-button {
@@ -18,24 +17,21 @@ margin:0;
   color: white;
   padding: 10px 20px;
   border: none;
-  cursor: pointer;
+  cursor: pointer;
 }
 
 h3 {
-	text-align:center;
-	font-family: Arial, sans-serif;
+  text-align: center;
+  font-family: Arial, sans-serif;
   color: #008000;
   font-size: 200%;
   text-shadow: 2px 2px 4px black;
-
 }
 
 table {
-	
   width: 70%;
-  border-collapse: collapse; 
+  border-collapse: collapse;
   margin-left: 15%;
-  
 }
 
 td {
@@ -43,8 +39,6 @@ td {
   text-align: center;
   border: 1px solid #ddd;
 }
-
-
 
 .content {
   display: flex;
@@ -68,48 +62,68 @@ p {
   margin-top: 5px;
 }
 
-
 .search-container {
   margin-bottom: 20px;
 }
 
 .search-container input[type="text"] {
-  width: 400px; /* Adjust the width as needed */
+  width: 400px;
   padding: 10px;
   font-size: 16px;
 }
 
 ul.breadcrumb {
-    padding: 3px 30px;
-    margin: 0;
-    list-style: none;
-    background-color: #FFFAF2 ;
-    display: flex;
-  }
-  
-  ul.breadcrumb li {
-    font-size: 15px;
-    display: flex;
-    align-items: center;
-    margin-right: 5px; /* Adjust the second one */
-  }
-  
-  ul.breadcrumb li+li:before {
-    padding: 0 0px; /* Adjust the padding value as per your preference */
-    color: black;
-    content: ">\00a0";
-  }
-  
-  ul.breadcrumb li:first-child a {
-    padding-left: 0;
-  }
-  
-  ul.breadcrumb li a {
-    color: orange;
-    text-decoration: none;
-  }
-  
-  ul.breadcrumb li a:hover {
-    color: orange;
-    text-decoration: underline;
+  padding: 3px 30px;
+  margin: 0;
+  list-style: none;
+  background-color: #FFFAF2;
+  display: flex;
+}
+
+ul.breadcrumb li {
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  margin-right: 5px;
+}
+
+ul.breadcrumb li+li:before {
+  padding: 0 0px;
+  color: black;
+  content: ">\00a0";
+}
+
+ul.breadcrumb li:first-child a {
+  padding-left: 0;
+}
+
+ul.breadcrumb li a {
+  color: orange;
+  text-decoration: none;
+}
+
+ul.breadcrumb li a:hover {
+  color: orange;
+  text-decoration: underline;
+}
+
+.course-cell:hover .course-description {
+  display: block;
+}
+
+.course-description {
+  display: none;
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.course-description p {
+  margin: 5px 0;
 }
