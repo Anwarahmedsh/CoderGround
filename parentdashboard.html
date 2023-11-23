@@ -37,44 +37,55 @@
         <!-- Add an empty div with the id "kidsContainer" where the children will be displayed -->
 <div id="kidsContainer" class="students-container"></div>
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      // Check local storage for parent's children
-      var storedKids = JSON.parse(localStorage.getItem("parentKids"));
-  
-     // If no children are stored, add two default children
-     if (!storedKids) {
-      storedKids = [
-        { name: "Rania", age: 10, interests: "Python", image: "images/kiddd.png" },
-        { name: "Sara", age: 9, interests: "Robotics", image: "images/people (2).png" }
-      ];
-      localStorage.setItem("parentKids", JSON.stringify(storedKids));
-    }
-  
-      // Display children on the dashboard
-      displayChildren(storedKids);
-    });
-  
-    function displayChildren(kids) {
-      var kidsContainer = document.getElementById("kidsContainer");
-  
-      // Clear existing content
-      kidsContainer.innerHTML = "";
-  
-      // Display each child dynamically
-      kids.forEach(function(child) {
-        var childDiv = document.createElement("div");
-        childDiv.classList.add("student");
-  
-        childDiv.innerHTML = `
-          <img src="${child.image}" alt="${child.name}">
-          <h3>${child.name}</h3>
-          <p>Age: ${child.age}</p>
-          <p>Interests: ${child.interests}</p>
-        `;
-  
-        kidsContainer.appendChild(childDiv);
-      });
-    }
+document.addEventListener("DOMContentLoaded", function () {
+  // Check local storage for parent's default children
+  var storedDefaultKids = JSON.parse(localStorage.getItem("parentDefaultKids")) || [];
+
+  // If no default children are stored, add two default children
+  if (storedDefaultKids.length === 0) {
+    storedDefaultKids = [
+      { name: "Rania", age: 10, interests: "Python", image: "images/kiddd.png" },
+      { name: "Sara", age: 9, interests: "Robotics", image: "images/people (2).png" }
+    ];
+    localStorage.setItem("parentDefaultKids", JSON.stringify(storedDefaultKids));
+  }
+
+  // Display default children on the dashboard
+  displayChildren(storedDefaultKids);
+
+  // Check local storage for parent's registered children
+  var storedRegisteredKids = JSON.parse(localStorage.getItem("parentRegisteredKids")) || [];
+
+  // Display registered children on the dashboard
+  displayChildren(storedRegisteredKids);
+
+  // Check local storage for parent's children
+  var storedKids = JSON.parse(localStorage.getItem("parentKids")) || [];
+
+  // Display children on the dashboard
+  displayChildren(storedKids);
+});
+
+function displayChildren(kids) {
+  var kidsContainer = document.getElementById("kidsContainer");
+
+  // Display each child dynamically
+  kids.forEach(function (child) {
+    var childDiv = document.createElement("div");
+    childDiv.classList.add("student");
+
+    childDiv.innerHTML = `
+      <img src="${child.image}" alt="${child.name}">
+      <h3>${child.name}</h3>
+      <p>Age: ${child.age}</p>
+      <p>Interests: ${child.interests}</p>
+    `;
+
+    kidsContainer.appendChild(childDiv);
+  });
+}
+
+
   </script>
   
 
