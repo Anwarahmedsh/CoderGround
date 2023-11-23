@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parents Dashboard</title>
     <link rel="stylesheet" href="parentds.css">
-    <link rel="stylesheet" href="common.css">
+    
 </head>
 <body>
     <header>
         <a href="HomePagee.html" class="logo">
-            <img src="images\logo.jpg" alt="Ground coder" width="150" height="150">
+            <img src="images\logo.png" alt="Ground coder" width="150" height="150">
         </a>
         <span class="header-text"> Coder Ground <br><span class="subtext"> let's make Learning fun! </span> </span>
     </header>
@@ -18,7 +18,7 @@
         <li><a href="HomePagee.html">Home</a></li>
         <li><a href="parentdashboard.html">parents' dashboard</a></li>
     </ul>
-    <form style="background-color: #fff3c2;">
+    <form>
         <nav>
             <ul>
                 <li><a class="active" href="parentdashboard.html" accesskey="p">parents' dashboard</a></li>
@@ -90,6 +90,34 @@ kids.forEach(function (child) {
   kidsContainer.appendChild(childDiv);
 });
 }
+
+
+var icon = document.getElementById("icon");
+var isDarkMode = localStorage.getItem('darkMode') === 'true';
+
+
+function toggleDarkMode() {
+  document.body.classList.toggle("dark-theme");
+  isDarkMode = !isDarkMode; 
+  localStorage.setItem('darkMode', isDarkMode); 
+  if (document.body.classList.contains("dark-theme")) {
+    icon.src = "images/sun.png";
+  } else {
+    icon.src = "images/moon.png";
+  }
+}
+
+
+if (isDarkMode) {
+  document.body.classList.add("dark-theme");
+  icon.src = "images/sun.png";
+} else {
+  document.body.classList.remove("dark-theme");
+  icon.src = "images/moon.png";
+}
+
+
+icon.onclick = toggleDarkMode;
 </script>
 <br>
 <br>
