@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="parentds.css">
     <link rel="stylesheet" href="common.css">
 </head>
-
 <body>
     <header>
         <a href="HomePagee.html" class="logo">
@@ -37,94 +36,87 @@
         <!-- Add an empty div with the id "kidsContainer" where the children will be displayed -->
 <div id="kidsContainer" class="students-container"></div>
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-  // Check local storage for parent's default children
-  var storedDefaultKids = JSON.parse(localStorage.getItem("parentDefaultKids")) || [];
+    document.addEventListener("DOMContentLoaded", function () {
+      // Check local storage for parent's default children
+      var storedDefaultKids = JSON.parse(localStorage.getItem("parentDefaultKids")) || [];
+    
+      // If no default children are stored, add two default children
+      if (storedDefaultKids.length === 0) {
+        storedDefaultKids = [
+          { name: "Rania", age: 10, interests: "Python", image: "images/kiddd.png" },
+          { name: "Sara", age: 9, interests: "Robotics", image: "images/people (2).png" }
+        ];
+        localStorage.setItem("parentDefaultKids", JSON.stringify(storedDefaultKids));
+    }
 
-  // If no default children are stored, add two default children
-  if (storedDefaultKids.length === 0) {
-    storedDefaultKids = [
-      { name: "Rania", age: 10, interests: "Python", image: "images/kiddd.png" },
-      { name: "Sara", age: 9, interests: "Robotics", image: "images/people (2).png" }
-    ];
-    localStorage.setItem("parentDefaultKids", JSON.stringify(storedDefaultKids));
-  }
+// Display default children on the dashboard
+displayChildren(storedDefaultKids, "Default Kids");
 
-  // Display default children on the dashboard
-  displayChildren(storedDefaultKids, "Default Kids");
+// Check local storage for parent's registered children
+var storedRegisteredKids = JSON.parse(localStorage.getItem("parentRegisteredKids")) || [];
 
-  // Check local storage for parent's registered children
-  var storedRegisteredKids = JSON.parse(localStorage.getItem("parentRegisteredKids")) || [];
+// Display registered children on the dashboard
+displayChildren(storedRegisteredKids, "Registered Kids");
 
-  // Display registered children on the dashboard
-  displayChildren(storedRegisteredKids, "Registered Kids");
+// Check local storage for parent's children
+var storedKids = JSON.parse(localStorage.getItem("parentKids")) || [];
 
-  // Check local storage for parent's children
-  var storedKids = JSON.parse(localStorage.getItem("parentKids")) || [];
-
-  // Display children on the dashboard
-  displayChildren(storedKids, "All Kids");
+// Display children on the dashboard
+displayChildren(storedKids, "All Kids");
 });
 
 function displayChildren(kids, category) {
-  var kidsContainer = document.getElementById("kidsContainer");
+var kidsContainer = document.getElementById("kidsContainer");
 
-  console.log(Displaying ${category}:, kids);
+console.log(`Displaying ${category}:`, kids);
 
-  // Display each child dynamically
-  kids.forEach(function (child) {
-    var childDiv = document.createElement("div");
-    childDiv.classList.add("student");
+// Display each child dynamically
+kids.forEach(function (child) {
+  var childDiv = document.createElement("div");
+  childDiv.classList.add("student");
 
-    if (child.name) {
-      childDiv.innerHTML = `
-        <img src="${child.image}" alt="${child.name}">
-        <h3>${child.name}</h3>
-        <p>Age: ${child.age}</p>
-        <p>Interests: ${child.interests}</p>
-      `;
-    } else {
-      // Handle the case where the name is undefined or not present
-      childDiv.innerHTML = <p>Error: Child name not available</p>;
-    }
+  if (child.name) {
+    childDiv.innerHTML = `
+      <img src="${child.image}" alt="${child.name}">
+      <h3>${child.name}</h3>
+      <p>Age: ${child.age}</p>
+      <p>Interests: ${child.interests}</p>
+    `;
+  } else {
+    // Handle the case where the name is undefined or not present
+    childDiv.innerHTML = `<p>Error: Child name not available</p>`;
+  }
 
-    kidsContainer.appendChild(childDiv);
-  });
+  kidsContainer.appendChild(childDiv);
+});
 }
+</script>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+    <div class="styled-div">
+        <img src="images\register-18.png" alt="" class="styled-img">
+        <h3 class="styled-h3"><a href="registration.html" class="styled-a">Register a New kid</a></h3>
+        <p></p>
+    </div>
+    <div class="styled-div">
+        <img src="images\how-to-enrol.png" alt="enrol icon" class="styled-img">
+        <h3 class="styled-h3"><a href="Enrollment.html" class="styled-a">Course Enrollment</a></h3>
+    </div>
 
-
-  </script>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <div class="container">
-            <div class="styled-div">
-                <img src="images\register-18.png" alt="" class="styled-img">
-                <h3 class="styled-h3"><a href="registration.html" class="styled-a">Register a New kid</a></h3>
-                <p></p>
-            </div>
-
-            <div class="styled-div">
-                <img src="images\how-to-enrol.png" alt="enrol icon" class="styled-img">
-                <h3 class="styled-h3"><a href="Enrollment.html" class="styled-a">Course Enrollment</a></h3>
-            </div>
-
-            <div class="styled-div">
-                <img src="images\1688413.png" alt="evaluation icon" class="styled-img">
-                <h3 class="styled-h3"><a href="evalution.html" class="styled-a">Course Evaluation</a></h3>
-            </div>
-        </div>
-        <br>
-        <br>
-    </form>
-    <footer>
-        <p>Contact us: info@example.com | Phone: 123456-7890</p>
-        <p>© CoderGround 2023</p>
-    </footer>
-    
-  
-</body>
-</html>
+    <div class="styled-div">
+        <img src="images\1688413.png" alt="evaluation icon" class="styled-img">
+        <h3 class="styled-h3"><a href="evalution.html" class="styled-a">Course Evaluation</a></h3>
+    </div>
+</div>
+<br>
+<br>
+</form>
+<footer>
+<p>Contact us: info@example.com | Phone: 123456-7890</p>
+<p>© CoderGround 2023</p>
+</footer>
