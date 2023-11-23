@@ -68,27 +68,18 @@ function validateForm() {
     return false; // Stop form submission
   }
 
-  // Store child's name in local storage
-  var childInfo = { name: name };
-  localStorage.setItem('childName', name);
+// Store child's name in local storage
+var childInfo = { name: name };
+localStorage.setItem('childName', name);
 
-  // Check if there are already saved children in local storage
-  let parentKids = JSON.parse(localStorage.getItem("parentKids")) || [];
+// Check if there are already saved children in local storage
+let parentRegisteredKids = JSON.parse(localStorage.getItem("parentRegisteredKids")) || [];
 
-  // Add the new child to the list
-  parentKids.push(name);
+// Add the new child to the list of registered kids
+parentRegisteredKids.push(childInfo);
 
-  // Update local storage
-  localStorage.setItem("parentKids", JSON.stringify(parentKids));
-
+// Update local storage for registered kids
+localStorage.setItem("parentRegisteredKids", JSON.stringify(parentRegisteredKids));
   return true; // Proceed with form submission
 }
-
-
-
-
-
-
-
-
 

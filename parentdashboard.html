@@ -51,35 +51,42 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Display default children on the dashboard
-  displayChildren(storedDefaultKids);
+  displayChildren(storedDefaultKids, "Default Kids");
 
   // Check local storage for parent's registered children
   var storedRegisteredKids = JSON.parse(localStorage.getItem("parentRegisteredKids")) || [];
 
   // Display registered children on the dashboard
-  displayChildren(storedRegisteredKids);
+  displayChildren(storedRegisteredKids, "Registered Kids");
 
   // Check local storage for parent's children
   var storedKids = JSON.parse(localStorage.getItem("parentKids")) || [];
 
   // Display children on the dashboard
-  displayChildren(storedKids);
+  displayChildren(storedKids, "All Kids");
 });
 
-function displayChildren(kids) {
+function displayChildren(kids, category) {
   var kidsContainer = document.getElementById("kidsContainer");
+
+  console.log(`Displaying ${category}:`, kids);
 
   // Display each child dynamically
   kids.forEach(function (child) {
     var childDiv = document.createElement("div");
     childDiv.classList.add("student");
 
-    childDiv.innerHTML = `
-      <img src="${child.image}" alt="${child.name}">
-      <h3>${child.name}</h3>
-      <p>Age: ${child.age}</p>
-      <p>Interests: ${child.interests}</p>
-    `;
+    if (child.name) {
+      childDiv.innerHTML = `
+        <img src="${child.image}" alt="${child.name}">
+        <h3>${child.name}</h3>
+        <p>Age: ${child.age}</p>
+        <p>Interests: ${child.interests}</p>
+      `;
+    } else {
+      // Handle the case where the name is undefined or not present
+      childDiv.innerHTML = `<p>Error: Child name not available</p>`;
+    }
 
     kidsContainer.appendChild(childDiv);
   });
