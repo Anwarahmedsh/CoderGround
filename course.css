@@ -66,6 +66,7 @@ color: var(--4-color);
 
 body {
 background-color: var(--1-color);
+	text-align: center;
 }
 
 .cell {

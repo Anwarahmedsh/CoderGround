@@ -21,6 +21,7 @@ text-shadow: 2px 2px 4px var(--3-color);
 
 body{
 background-color: var(--1-color);
+    text-align: center;
 
 }
 
