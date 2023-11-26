@@ -16,8 +16,7 @@ text-shadow: 2px 2px 4px var(--12-color);
 
 body{
   background-color: var(--8-color);
-  text-align: left;
-  }
+  text-align: left;}
 
 
   @media screen and (max-width:600px) {
@@ -222,3 +221,5 @@ body{
   --12-color:#0534f8;
   --lightimage: url("images/WALLPAPERblack.png");
   }
+
+  
