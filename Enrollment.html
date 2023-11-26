@@ -5,8 +5,203 @@
  <link rel="stylesheet" href="enrollstyle.css">
 <link rel="stylesheet" href="common.css">
 <script src="enroll.js"></script>
-
 </head>
+<script>
+  
+// Function to populate the dropdown list with saved children's names
+function populateChildDropdown() {
+  // Retrieve the saved children's information from local storage
+  var parentRegisteredKids = JSON.parse(localStorage.getItem("parentRegisteredKids"));
+
+  // Get the dropdown list element
+  var dropdownList = document.getElementById('child21');
+
+  // Clear existing options
+  dropdownList.innerHTML = '';
+
+  // Check if there are saved children
+  if (parentRegisteredKids && parentRegisteredKids.length > 0) {
+    // Iterate over the saved children and create options
+    parentRegisteredKids.forEach(function(childInfo) {
+      var option = document.createElement('option');
+      option.value = childInfo.name;
+      option.textContent = childInfo.name;
+      dropdownList.appendChild(option);
+    });
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  populateChildDropdown();
+  // Define the courses array
+  var courses = [
+    {
+      name: "Scratch",
+      tutor: "T.Mona",
+      prerequisites: []
+    },
+    {
+      name: "Data Science",
+      tutor: "T.Anwar",
+      prerequisites: ["Scratch"]
+    },
+    {
+      name: "Robotics",
+      tutor: "T.Mona",
+      prerequisites: []
+    },
+    {
+      name: "Machine Learning",
+      tutor: "T.Anwar",
+      prerequisites: ["Scratch"]
+    },
+    {
+      name: "JavaScript",
+      tutor: "T.Sarah",
+      prerequisites: ["Robotics"]
+    },
+    {
+      name: "Web Development",
+      tutor: "T.Sarah",
+      prerequisites: ["Machine Learning"]
+    },
+    {
+      name: "Python",
+      tutor: "T.Hussam",
+      prerequisites: ["Data Science"]
+    },
+    {
+      name: "Artificial Intelligence",
+      tutor: "T.Abdullah",
+      prerequisites: ["JavaScript"]
+    },
+    {
+      name: "Ruby",
+      tutor: "T.Fahad",
+      prerequisites: []
+    }
+  ];
+
+  // Populate the tutor filter options
+  var tutorFilter = document.getElementById("filter-tutor");
+  var tutors = [];
+  for (var i = 0; i < courses.length; i++) {
+    if (!tutors.includes(courses[i].tutor)) {
+      var option = document.createElement("option");
+      option.value = courses[i].tutor;
+      option.text = courses[i].tutor;
+      tutorFilter.appendChild(option);
+      tutors.push(courses[i].tutor);
+    }
+  }
+
+  // Populate the prerequisite filter options
+  var prerequisiteFilter = document.getElementById("filter-prerequisite");
+  var prerequisites = [];
+  for (var i = 0; i < courses.length; i++) {
+    for (var j = 0; j < courses[i].prerequisites.length; j++) {
+      if (!prerequisites.includes(courses[i].prerequisites[j])) {
+        var option = document.createElement("option");
+        option.value = courses[i].prerequisites[j];
+        option.text = courses[i].prerequisites[j];
+        prerequisiteFilter.appendChild(option);
+        prerequisites.push(courses[i].prerequisites[j]);
+      }
+    }
+  }
+
+  // Event listener for tutor filter
+  tutorFilter.addEventListener("change", function() {
+    var selectedTutor = tutorFilter.value;
+    filterCourses(selectedTutor, null);
+  });
+
+  // Event listener for prerequisite filter
+  prerequisiteFilter.addEventListener("change", function() {
+    var selectedPrerequisite = prerequisiteFilter.value;
+    filterCourses(null, selectedPrerequisite);
+  });
+
+  // Function to filter courses based on tutor or prerequisite
+  function filterCourses(tutor, prerequisite) {
+    // Reset checkboxes
+    var checkboxes = document.getElementsByName("courses");
+    for (var i = 0; i < checkboxes.length; i++) {
+      checkboxes[i].checked = false;
+      checkboxes[i].style.display = "none";
+    }
+
+    // Filter and display checkboxes
+    for (var i = 0; i < courses.length; i++) {
+      if ((tutor && courses[i].tutor === tutor) || (prerequisite && courses[i].prerequisites.includes(prerequisite))) {
+        var checkbox = document.getElementById("course" + (i + 1));
+        checkbox.style.display = "block";
+      }
+    }
+  }
+
+  // Function to validate the form
+  function validateForm2() {
+    console.log("Form submitted");
+    // Get the selected child's name
+    var selectedChild = document.getElementById('child21').value;
+
+    // Get the selected courses
+    var selectedCourses = document.querySelectorAll('input[name="courses"]:checked');
+    var selectedCourseNames = Array.from(selectedCourses).map(function(course) {
+      return course.nextElementSibling.textContent;
+    });
+
+    // Get the tutor name foreach selected course
+    var selectedTutors = [];
+    for (var i = 0; i < courses.length; i++) {
+      if (selectedCourseNames.includes(courses[i].name)) {
+        selectedTutors.push(courses[i].tutor);
+      }
+    }
+
+    // Display the selected child and courses
+    var enrollmentInfo = document.getElementById('enrollment-info');
+    enrollmentInfo.innerHTML = '';
+
+    var childHeading = document.createElement('h3');
+    childHeading.textContent = 'Selected Child:';
+    var childParagraph = document.createElement('p');
+    childParagraph.textContent = selectedChild;
+
+    var coursesHeading = document.createElement('h3');
+    coursesHeading.textContent = 'Selected Courses:';
+    var coursesList = document.createElement('ul');
+    selectedCourseNames.forEach(function(courseName) {
+      var listItem = document.createElement('li');
+      listItem.textContent = courseName;
+      coursesList.appendChild(listItem);
+    });
+
+    var tutorsHeading = document.createElement('h3');
+    tutorsHeading.textContent = 'Tutors:';
+    var tutorsList = document.createElement('ul');
+    selectedTutors.forEach(function(tutor) {
+      var listItem = document.createElement('li');
+      listItem.textContent = tutor;
+      tutorsList.appendChild(listItem);
+    });
+
+    enrollmentInfo.appendChild(childHeading);
+    enrollmentInfo.appendChild(childParagraph);
+    enrollmentInfo.appendChild(coursesHeading);
+    enrollmentInfo.appendChild(coursesList);
+    enrollmentInfo.appendChild(tutorsHeading);
+    enrollmentInfo.appendChild(tutorsList);
+
+    return false; // Prevent form submission
+  }
+
+});
+</script>
+ 
+
+
 
 <body>
 
@@ -34,7 +229,7 @@
 
       <ul>
           <li><a class="active" href="parentdashboard.html" accesskey="p">parents' dashboard</a></li>
-          <li><a href="administrator dashboard.html" accesskey="a">administrator dashboard</a></li>
+          <li><a href="#administrator-dashboard" accesskey="a">administrator dashboard</a></li>
           <li><a href="courses.html" accesskey="c">current courses</a></li>
           <li><a href="tutors.html" accesskey="t">tutors</a></li>
       </ul>
@@ -42,6 +237,8 @@
  </nav>
  
  <main>
+
+  <div id="enrollment-info"></div>
 	 <script>
 	
 var icon = document.getElementById("icon");
@@ -73,7 +270,6 @@ icon.onclick = toggleDarkMode;
 	</script>
  <br><br>
  <h2>Course Enrollment</h2>
- <div id="enrollment-info"></div>
  
  
  
@@ -185,235 +381,30 @@ icon.onclick = toggleDarkMode;
         </div>
     </div>
 </section>
+            
+    
+            
+            
+            
+            
+   
+  
+
         <br><br><br><br>
 
         <input class="in" type="submit" value="START COURSE">
     </fieldset>
 </form>
+<div id="enrollment-info"></div>
 <br><br><br><br>
 </main>
-<script>
-// Function to populate the dropdown list with saved children's names
-function populateChildDropdown() {
-    // Retrieve the saved children's information from local storage
-    var parentRegisteredKids = JSON.parse(localStorage.getItem("parentRegisteredKids"));
 
-    // Get the dropdown list element
-    var dropdownList = document.getElementById('child21');
+</body>
 
-    // Clear existing options
-    dropdownList.innerHTML = '';
-
-    // Check if there are saved children
-    if (parentRegisteredKids && parentRegisteredKids.length > 0) {
-        // Iterate over the saved children and create options
-        parentRegisteredKids.forEach(function(childInfo) {
-            var option = document.createElement('option');
-            option.value = childInfo.name;
-            option.textContent = childInfo.name;
-            dropdownList.appendChild(option);
-        });
-    }
-}
-
-
-
-document.addEventListener("DOMContentLoaded", function() {
-    populateChildDropdown();
-    // Define the courses array
-    var courses = [
-      {
-        name: "Scratch",
-        tutor: "T.Mona",
-        prerequisites: []
-      },
-      {
-        name: "Data Science",
-        tutor: "T.Anwar",
-        prerequisites: ["Scratch"]
-      },
-      {
-        name: "Robotics",
-        tutor: "T.Mona",
-        prerequisites: []
-      },
-      {
-        name: "Machine Learning",
-        tutor: "T.Anwar",
-        prerequisites: ["Scratch"]
-      },
-      {
-        name: "JavaScript",
-        tutor: "T.Sarah",
-        prerequisites: ["Robotics"]
-      },
-      {
-        name: "Web Development",
-        tutor: "T.Sarah",
-        prerequisites: ["Machine Learning"]
-      },
-      {
-        name: "Paython",
-        tutor: "T.Hussam",
-        prerequisites: ["Data Science"]
-      },
-      {
-        name: "Artificial intelligence",
-        tutor: "T.Abdullah",
-        prerequisites: ["JavaScript"]
-      },
-      {
-        name: "Ruby",
-        tutor: "T.fahad",
-        prerequisites: []
-      }
-    ];
   
-    // Populate the tutor filter options
-    var tutorFilter = document.getElementById("filter-tutor");
-    var tutors = [];
-    for (var i = 0; i < courses.length; i++) {
-      if (!tutors.includes(courses[i].tutor)) {
-        var option = document.createElement("option");
-        option.value = courses[i].tutor;
-        option.text = courses[i].tutor;
-        tutorFilter.appendChild(option);
-        tutors.push(courses[i].tutor);
-      }
-    }
-  
-    // Populate the prerequisite filter options
-    var prerequisiteFilter = document.getElementById("filter-prerequisite");
-    var prerequisites = [];
-    for (var i = 0; i < courses.length; i++) {
-      for (var j = 0; j < courses[i].prerequisites.length; j++) {
-        if (!prerequisites.includes(courses[i].prerequisites[j])) {
-          var option = document.createElement("option");
-          option.value = courses[i].prerequisites[j];
-          option.text = courses[i].prerequisites[j];
-          prerequisiteFilter.appendChild(option);
-          prerequisites.push(courses[i].prerequisites[j]);
-        }
-      }
-    }
-
-
-// Event listener for tutor filter
-tutorFilter.addEventListener("change", function() {
-    var selectedTutor = tutorFilter.value;
-    filterCourses(selectedTutor, null);
-  });
-  
-  // Event listener for prerequisite filter
-  prerequisiteFilter.addEventListener("change", function() {
-    var selectedPrerequisite = prerequisiteFilter.value;
-    filterCourses(null, selectedPrerequisite);
-  });
-  
-  // Function to filter courses based on tutor or prerequisite
-  function filterCourses(tutor, prerequisite) {
-    // Reset checkboxes
-    var checkboxes = document.getElementsByName("courses");
-    for (var i = 0; i < checkboxes.length; i++) {
-      checkboxes[i].checked = false;
-      checkboxes[i].style.display = "none";
-    }
-  
-    // Filter and display checkboxes
-    for (var i = 0; i < courses.length; i++) {
-      if ((tutor && courses[i].tutor === tutor) || (prerequisite && courses[i].prerequisites.includes(prerequisite))) {
-        var checkbox = document.getElementById("course" + (i + 1));
-        checkbox.style.display = "block";
-      }
-    }
-  }
-
-
-
-
-  // Function to validate the form inputs
-function validateForm2() {
-    // Get the selected child
-    var childDropdown = document.getElementById('child21');
-    var selectedChild = childDropdown.value;
-  
-    // Get the selected courses
-    var checkboxes = document.getElementsByName('courses');
-    var selectedCourses = [];
-    for (var i = 0; i < checkboxes.length; i++) {
-      if (checkboxes[i].checked) {
-        selectedCourses.push({
-          name: checkboxes[i].nextSibling.textContent,
-          tutor: checkboxes[i].nextSibling.nextSibling.textContent.replace('T.', '')
-        });
-      }
-    }
-  
-    // Check if child and course selections are empty
-    if (selectedChild =='') {
-      alert('Please select a child.');
-      return false;
-    }
-  
-    if (selectedCourses.length == 0) {
-      alert('Please select at least one course.');
-      return false;
-    }
-  
-    // Display the enrollment information on the page
-    displayEnrollmentInfo(selectedChild, selectedCourses);
-  
-    // Clear the form
-    childDropdown.value = '';
-    checkboxes.forEach(function(checkbox) {
-      checkbox.checked = false;
-    });
-  
-    return false; // Prevent form submission
-  }
-  
-  // Event listener for form submission
-  var form = document.querySelector('form');
-  form.addEventListener('submit', validateForm2);
-
-
-// Function to display enrollment information on the page
-function displayEnrollmentInfo(childName, courses) {
-    // Clear previous information
-    var enrollmentInfo = document.getElementById('enrollment-info');
-    enrollmentInfo.innerHTML = '';
-  
-    // Create heading
-    var heading = document.createElement('h3');
-    heading.textContent = 'Enrollment Information';
-    enrollmentInfo.appendChild(heading);
-  
-    // Display child name
-    var childInfo = document.createElement('p');
-    childInfo.textContent = 'Child Name: ' + childName;
-    enrollmentInfo.appendChild(childInfo);
-  
-    // Display courses and tutors
-    var coursesInfo = document.createElement('p');
-    coursesInfo.textContent = 'Courses:';
-    enrollmentInfo.appendChild(coursesInfo);
-  
-    var coursesList = document.createElement('ul');
-    courses.forEach(function(course) {
-      var courseItem = document.createElement('li');
-      courseItem.textContent = course.name + ' (Tutor: ' + course.tutor + ')';
-      coursesList.appendChild(courseItem);
-    });
-    enrollmentInfo.appendChild(coursesList);
-  }
-  
-  
-});
-</script>
-<footer>
+ 
+  <footer>
     <p>Contact us: info@example.com | Phone: 123456-7890</p>
     <p>© Copyright 2023</p>
   </footer>
-</body>
 </html>
-
