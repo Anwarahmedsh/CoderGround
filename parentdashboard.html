@@ -36,6 +36,7 @@
         <!-- Add an empty div with the id "kidsContainer" where the children will be displayed -->
 <div id="kidsContainer" class="students-container"></div>
 <script>
+
 document.addEventListener("DOMContentLoaded", function () {
   // Check local storage for registered kids
   var storedRegisteredKids = JSON.parse(localStorage.getItem("parentRegisteredKids")) || [];
@@ -52,7 +53,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Display default children on the dashboard only if there are no registered kids
     displayChildren(storedDefaultKids, "Default Kids");
-  } else {
+  } 
+  else {
+    localStorage.removeItem(parentRegisteredKids)
+    localStorage.setItem("parentRegisteredKids", JSON.stringify(parentRegisteredKids));
     // Display registered children on the dashboard
     displayChildren(storedRegisteredKids, "Registered Kids");
   }

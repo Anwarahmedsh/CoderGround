@@ -1,74 +1,83 @@
 header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1px 10px;
-    background-color: #FFFAF2;
-    
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1px 10px; 
+  
 }
 
 .header-text {
-  margin-right:75%;
-  color: #A8DB73;
-  font-size: 200%;
-  text-shadow: 2px 2px 4px #A8DB73; 
-  white-space: nowrap;
+margin-right: 75%; 
+font-size: 200%;
+white-space: nowrap;
 }
 
 .subtext {
-  font-size: 50%;
-  color: #FACB07;
-  text-shadow: 2px 2px 4px #FACB07; 
+font-size: 50%;
 }
-
 
 body{
-background-color: #FFFAF2;
-font-family: Arial, sans-serif;
-margin:0;
-}
-
-
-nav {
-  display: flex;
-  justify-content: center;
-}
-
-nav ul {
-	
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #A8DB73;
-}
-
-
-nav li {
-	
-  float: left;
-}
-
-
-nav li a {
-  display: block;
-  color: white;
+  
+  font-family: Arial,sans-serif;
   text-align: center;
-  padding: 14px 127.41px;
-  text-decoration: none;
- 
-}
-
-nav li a:hover {
-  background-color: #54B337;
-}
+  margin:0;
+  }
 
 
-ul.breadcrumb {
+  @media screen and (max-width:600px) {
+    nav ul{
+      flex-direction: column;
+    }
+    nav li{
+      width:100%;
+    }
+  
+    .header-text{
+      font-size: 4vw;
+    }
+  
+    .subtext{
+      font-size: 3vw;
+    }
+
+    img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+  
+  
+  nav ul {
+    display: flex; 
+    flex-wrap: wrap; 
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    
+  }
+  
+  
+  nav li {
+    flex: 1;
+  }
+  
+    nav li a {
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      
+      text-align: center;
+      text-decoration: none;
+      padding: 14px;
+    }
+  
+
+  ul.breadcrumb {
     padding: 3px 30px;
     margin: 0;
     list-style: none;
-    background-color: #FFFAF2 ;
+    
     display: flex;
   }
   
@@ -76,12 +85,12 @@ ul.breadcrumb {
     font-size: 15px;
     display: flex;
     align-items: center;
-    margin-right: 5px; /* Adjust the second one */
+    margin-right: 5px;
   }
   
   ul.breadcrumb li+li:before {
-    padding: 0 0px; /* Adjust the padding value as per your preference */
-    color: black;
+    padding: 0 0px; 
+    
     content: ">\00a0";
   }
   
@@ -90,26 +99,20 @@ ul.breadcrumb {
   }
   
   ul.breadcrumb li a {
-    color: orange;
+    
     text-decoration: none;
   }
   
   ul.breadcrumb li a:hover {
-    color: orange;
+   
     text-decoration: underline;
-}
-
-
-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #A8DB73;
-  color: white;
-  text-align: center;
-  padding: 15px;
-}
-
-footer p {
-  margin: 5px;
-}
+  }
+  
+  footer {
+   
+    text-align: center;
+    font-size: 100%;
+    padding: 15px;
+    margin: 0;
+    
+    }
