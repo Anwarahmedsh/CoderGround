@@ -16,7 +16,6 @@ text-shadow: 2px 2px 4px var(--12-color);
 
 body{
   background-color: var(--8-color);
-  text-align: center;
   }
 
 
@@ -179,7 +178,7 @@ margin-bottom: 4.5%;
     padding-left: 60px;
     border-radius: 10px;
     margin-bottom: 22px;
-    box-shadow: -2px 29px 29px rgba(0, 0, 0, 0.2);
+    box-shadow: -2px 29px 29px rgba(207, 40, 185, 0.212);
     position: relative;
  width : 280px;
 justify-content: space-between;
@@ -283,12 +282,6 @@ background-color: var(--8-color);
 
 
 
-
-
-
-
-
-
 :root{
   --1-color: #ffffff;
   --2-color: #4caf50;
@@ -322,4 +315,3 @@ background-color: var(--8-color);
 
 
 }
- 
