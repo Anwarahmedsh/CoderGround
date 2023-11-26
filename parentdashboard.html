@@ -38,60 +38,50 @@
         <!-- Add an empty div with the id "kidsContainer" where the children will be displayed -->
 <div id="kidsContainer" class="students-container"></div>
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      // Check local storage for parent's default children
-      var storedDefaultKids = JSON.parse(localStorage.getItem("parentDefaultKids")) || [];
-    
-      // If no default children are stored, add two default children
-      if (storedDefaultKids.length === 0) {
-        storedDefaultKids = [
-          { name: "Rania", age: 10, interests: "Python", image: "images/kiddd.png" },
-          { name: "Sara", age: 9, interests: "Robotics", image: "images/people (2).png" }
-        ];
-        localStorage.setItem("parentDefaultKids", JSON.stringify(storedDefaultKids));
-    }
+ document.addEventListener("DOMContentLoaded", function () {
+  // Check local storage for parent's registered children
+  var storedRegisteredKids = JSON.parse(localStorage.getItem("parentRegisteredKids")) || [];
 
-// Display default children on the dashboard
-displayChildren(storedDefaultKids, "Default Kids");
+  if (storedRegisteredKids.length === 0) {
+    // If no registered children are stored, add default children
+    var storedDefaultKids = [
+      { name: "Rania", age: 10, interests: "Python", image: "images/kiddd.png" },
+      { name: "Sara", age: 9, interests: "Robotics", image: "images/people (2).png" }
+    ];
 
-// Check local storage for parent's registered children
-var storedRegisteredKids = JSON.parse(localStorage.getItem("parentRegisteredKids")) || [];
-
-// Display registered children on the dashboard
-displayChildren(storedRegisteredKids, "Registered Kids");
-
-// Check local storage for parent's children
-var storedKids = JSON.parse(localStorage.getItem("parentKids")) || [];
-
-// Display children on the dashboard
-displayChildren(storedKids, "All Kids");
+    localStorage.setItem("parentRegisteredKids", JSON.stringify(storedDefaultKids));
+    // Display default children on the dashboard only if there are no registered kids
+    displayChildren(storedDefaultKids, "Default Kids");
+  } else {
+    // Display registered children on the dashboard
+    displayChildren(storedRegisteredKids, "Registered Kids");
+  }
 });
 
 function displayChildren(kids, category) {
-var kidsContainer = document.getElementById("kidsContainer");
+  var kidsContainer = document.getElementById("kidsContainer");
 
-console.log(`Displaying ${category}:`, kids);
+  console.log(`Displaying ${category}:`, kids);
 
-// Display each child dynamically
-kids.forEach(function (child) {
-  var childDiv = document.createElement("div");
-  childDiv.classList.add("student");
+  // Display each child dynamically
+  kidsContainer.innerHTML = ""; // Clear existing content
 
-  if (child.name) {
-    childDiv.innerHTML = `
-      <img src="${child.image}" alt="${child.name}">
-      <h3>${child.name}</h3>
-      <p>Age: ${child.age}</p>
-      <p>Interests: ${child.interests}</p>
-    `;
-  } else {
-    // Handle the case where the name is undefined or not present
-    childDiv.innerHTML = `<p>Error: Child name not available</p>`;
-  }
+  kids.forEach(function (child) {
+    var childDiv = document.createElement("div");
+    childDiv.classList.add("student");
 
-  kidsContainer.appendChild(childDiv);
-});
+    if (child.name) {
+      childDiv.innerHTML = `
+        <img src="${child.image}" alt="${child.name}">
+        <h3>${child.name}</h3>
+        <p>Age: ${child.age}</p>
+        <p>Interests: ${child.interests}</p>
+      `;
+      kidsContainer.appendChild(childDiv);
+    }
+  });
 }
+   
 
 
 var icon = document.getElementById("icon");
