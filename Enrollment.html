@@ -4,6 +4,8 @@
   <title>Enrollment Page</title>
  <link rel="stylesheet" href="enrollstyle.css">
 <link rel="stylesheet" href="common.css">
+<script src="enroll.js"></script>
+
 </head>
 
 <body>
@@ -11,16 +13,18 @@
 
 <header>
 
-    <a href="HomePagee.html" class="logo">
-      <img src="images\logo.jpg alt="Ground coder" width="150" height="150">
+    <a href="index.html" class="logo">
+      <img src="images\logo.png" alt="Ground coder" width="150" height="150">
       </a> 
 	  <span class="header-text"> Coder Ground <br><span class= "subtext"> let's make Learning fun! </span> </span>
 	  
 </header>
 
 
+
+
 <ul class="breadcrumb">
-  <li><a href="HomePagee.html">Home</a></li>
+  <li><a href="index.html">Home</a></li>
   <li><a href="parentdashboard.html">parent dashboard</a></li>
     <li><a href="Enrollment.html">Course enrollment</a></li>
 </ul>
@@ -30,7 +34,7 @@
 
       <ul>
           <li><a class="active" href="parentdashboard.html" accesskey="p">parents' dashboard</a></li>
-          <li><a href="Administrator Dashboard.html" accesskey="a">administrator dashboard</a></li>
+          <li><a href="#administrator-dashboard" accesskey="a">administrator dashboard</a></li>
           <li><a href="courses.html" accesskey="c">current courses</a></li>
           <li><a href="tutors.html" accesskey="t">tutors</a></li>
       </ul>
@@ -40,19 +44,19 @@
  <main>
  <br><br>
  <h2>Course Enrollment</h2>
+ <div id="enrollment-info"></div>
  
  
  
 
-<form>
+<form method="get" onsubmit="return validateForm2()">
 <fieldset>
 <div class="child11">
        <label for="child"> Child's name:</label> <br><br>
-        <select id="child" name="child">
-            <option value="child1">Norah</option>
-            <option value="child2">Ahmed</option>
-            <option value="child3">Sarah</option>
-        
+        <select id="child21" name="child">
+            <option value="ch">jury</option>
+            <option value="ch">tala</option>
+
         </select>
 </div>
 <!--         <br><br> -->
@@ -62,10 +66,7 @@
       <div class ="filter1">
         <label for="filter-tutor">Filter:</label> <br><br>
        <select id="filter-tutor" name="filter-tutor">
-            <option value="all">All Tutors</option>
-            <option value="tutor1">T.fahad</option>
-            <option value="tutor2">T.asma</option>
-            <option value="tutor3">T.ali</option> 
+
         </select>
          </div>
     </section>    
@@ -73,11 +74,7 @@
 <section class="group67">
       <div class ="filter1">
         <select id="filter-prerequisite" name="filter-prerequisite">
-            <option value="all">All Prerequisites</option>
-            <option value="none">None</option>
-            <option value="prerequisite1">paython</option>
-            <option value="prerequisite2">java</option>
-            <option value="prerequisite3">database</option>
+       
         </select>
         </div>
         </section>
@@ -93,28 +90,28 @@
         
         <div class="course item1">
             <input type="checkbox" id="course1" name="courses" value="course1">
-            <img src="images\Scratch-cat.png" alt="course"width="80" height="80"> <label for="course1">Scratch</label>
+            <img src="images/Scratch-cat.png" alt="course"width="80" height="80"> <label for="course1">Scratch</label>
        </div>
        
        <br>   <br>
        
         <div class="course item2">
             <input type="checkbox" id="course2" name="courses" value="course2">
-            <img src="images\ds.png" alt="course"width="80" height="80"> <label for="course2">Data Science</label>
+            <img src="images/ds.png" alt="course"width="80" height="80"> <label for="course2">Data Science</label>
                 </div>
                 
                 <br>   <br>
                 
                  <div class="course item3">
             <input type="checkbox" id="course3" name="courses" value="course3">
-            <img src="images\robotics.png" alt="course"width="80" height="80"> <label for="course3">Robotics</label>
+            <img src="images/robotics.png" alt="course"width="80" height="80"> <label for="course3">Robotics</label>
              </div> 
              
               <br>   <br>
              
               <div class="course item4">
              <input type="checkbox" id="course4" name="courses" value="course4">
-            <img src="images\mlkid.png" alt="course"width="80" height="80"> <label for="course4">Machine Learning</label>
+            <img src="images/mlkid.png" alt="course"width="80" height="80"> <label for="course4">Machine Learning</label>
             </div>
             
             </div>
@@ -126,7 +123,7 @@
       <div>
         <div class="course item5">
             <input type="checkbox" id="course5" name="courses" value="course5">
-            <img src="images\jsc.png" alt="course" width="80" height="80">
+            <img src="images/jsc.png" alt="course" width="80" height="80">
             <label for="course5">JavaScript</label>
         </div>
         
@@ -135,7 +132,7 @@
          
         <div class="course item6">
             <input type="checkbox" id="course6" name="courses" value="course6">
-            <img src="images\webdev.png" alt="course" width="80" height="80">
+            <img src="images/webdev.png" alt="course" width="80" height="80">
             <label for="course6">Web Development</label>
         </div>
         
@@ -144,7 +141,7 @@
          
         <div class="course item7">
             <input type="checkbox" id="course7" name="courses" value="course7">
-            <img src="images\Python-logo.png" alt="course" width="80" height="80">
+            <img src="images/Python-logo.png" alt="course" width="80" height="80">
             <label for="course7">Paython</label>
         </div>
         
@@ -154,7 +151,7 @@
          
         <div class="course item8">
             <input type="checkbox" id="course8" name="courses" value="course8">
-            <img src="images\AI.png" alt="course" width="80" height="80">
+            <img src="images/AI.png" alt="course" width="80" height="80">
             <label for="course8">Artificial intelligence</label>
         </div>
     </div>
@@ -176,10 +173,13 @@
 <br><br><br><br>
 </main>
 
-<footer>
+</body>
+
+  
+ 
+  <footer>
     <p>Contact us: info@example.com | Phone: 123456-7890</p>
     <p>© Copyright 2023</p>
   </footer>
-</body>
 </html>
 

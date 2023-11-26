@@ -16,6 +16,7 @@ text-shadow: 2px 2px 4px var(--12-color);
 
 body{
   background-color: var(--8-color);
+  text-align: center;
   }
 
 
@@ -321,12 +322,4 @@ background-color: var(--8-color);
 
 
 }
-
-
-
-
-
-
-
- 
  
