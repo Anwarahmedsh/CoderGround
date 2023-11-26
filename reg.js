@@ -59,6 +59,15 @@ function validateForm() {
     return false; // Stop form submission
   }
 
+  var selectedGender = "";
+  for (var i = 0; i < radio.length; i++) {
+    if (radio[i].checked) {
+      selectedGender = radio[i].value;
+      break;
+    }
+  }
+
+
   // Validate date of birth
   var currentYear = new Date().getFullYear();
   var dobYear = new Date(dob).getFullYear();
@@ -69,7 +78,8 @@ function validateForm() {
   }
 
 // Store child's name in local storage
-var childInfo = { name: name, image: "images/people (1).png", age: 10, interests: "java script" };
+var childInfo = { name: name };
+localStorage.setItem('childName', name);
 
 // Check if there are already saved children in local storage
 let parentRegisteredKids = JSON.parse(localStorage.getItem("parentRegisteredKids")) || [];
@@ -79,6 +89,32 @@ parentRegisteredKids.push(childInfo);
 
 // Update local storage for registered kids
 localStorage.setItem("parentRegisteredKids", JSON.stringify(parentRegisteredKids));
+  
 
+ // If the form is valid, open a new page with form information
+ var formInfo = {
+  Name: name,
+  Phone: phoneNumber,
+  DateOfBirth: dob,
+  Email: email,
+  Gender: selectedGender,
+  File: fileInput
+};
+
+// Open a new page with form information
+var formInfoPage = window.open('', '_blank');
+formInfoPage.document.write('<html><head><title>Form Information</title></head><body>');
+formInfoPage.document.write('<h1>Form Information</h1>');
+formInfoPage.document.write('<p><strong>Name:</strong> ' + formInfo.Name + '</p>');
+formInfoPage.document.write('<p><strong>Phone:</strong> ' + formInfo.Phone + '</p>');
+formInfoPage.document.write('<p><strong>Date of Birth:</strong> ' + formInfo.DateOfBirth + '</p>');
+formInfoPage.document.write('<p><strong>Email:</strong> ' + formInfo.Email + '</p>');
+formInfoPage.document.write('<p><strong>Gender:</strong> ' + formInfo.Gender + '</p>');
+formInfoPage.document.write('<p><strong>File:</strong> ' + formInfo.File + '</p>');
+formInfoPage.document.write('<button onclick="window.print()">Print</button>');
+formInfoPage.document.write('</body></html>');
+formInfoPage.document.close();
+
+
+  return true; // Proceed with form submission
 }
-
