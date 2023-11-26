@@ -69,7 +69,7 @@ function validateForm() {
   }
 
 // Store child's name in local storage
-var childInfo = { name: name, image: "path_to_image", age: 10, interests: "Interest" };
+var childInfo = { name: name, image: "path_to_image", age: 10, interests: "java script" };
 
 // Check if there are already saved children in local storage
 let parentRegisteredKids = JSON.parse(localStorage.getItem("parentRegisteredKids")) || [];
