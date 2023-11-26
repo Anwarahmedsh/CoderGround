@@ -12,7 +12,7 @@
 <header>
 
     <a href="HomePagee.html" class="logo">
-      <img src="images\logo.jpg" alt="Ground coder" width="150" height="150">
+      <img src="images\logo.png" alt="Ground coder" width="150" height="150">
       </a> 
 	  <span class="header-text"> Coder Ground <br><span class= "subtext"> let's make Learning fun! </span> </span>
 	 
@@ -34,7 +34,34 @@
 
 
 <main> 
-
+  <script>
+    var icon = document.getElementById("icon");
+    var isDarkMode = localStorage.getItem('darkMode') === 'true';
+    
+    
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-theme");
+      isDarkMode = !isDarkMode; 
+      localStorage.setItem('darkMode', isDarkMode); 
+      if (document.body.classList.contains("dark-theme")) {
+        icon.src = "images/sun.png";
+      } else {
+        icon.src = "images/moon.png";
+      }
+    }
+    
+    
+    if (isDarkMode) {
+      document.body.classList.add("dark-theme");
+      icon.src = "images/sun.png";
+    } else {
+      document.body.classList.remove("dark-theme");
+      icon.src = "images/moon.png";
+    }
+    
+    
+    icon.onclick = toggleDarkMode;
+    </script>
 <h2> Course evaluation </h2>
 <div  class= "course-eavalution">
   
@@ -169,9 +196,9 @@
   </footer>
   
 <script>
-
  function submitForm() {
   var selectedCourse = document.querySelector('select[name="course title"]').value;
+
   var radioGroups = document.querySelectorAll('input[type="radio"]:checked');
 
   if (selectedCourse && radioGroups.length === 8) {
@@ -180,18 +207,19 @@
       ratings.push(radio.value);
     });
 
-    var FrequentRating = MostFrequentRating(ratings);
+    
+    var mostFrequentRating = findMostFrequentRating(ratings);
 
-    alert("Thank you for your feedback!\nYour rating for course " + selectedCourse + " is "+ FrequentRating + ".");
+    alert("Thank you for your feedback!\nYour rating for course " + selectedCourse +" is "+ mostFrequentRating + ".");
   } else {
     alert("Please select a course and provide ratings for all criteria.");
   }
 }
 
-function MostFrequentRating(ratings) {
+function findMostFrequentRating(ratings) {
   var counts = {};
   var maxCount = 0;
-  var FrequentRating = '';
+  var mostFrequentRating = '';
 
   for (var i = 0; i < ratings.length; i++) {
     var rating = ratings[i];
@@ -203,13 +231,11 @@ function MostFrequentRating(ratings) {
 
     if (counts[rating] > maxCount) {
       maxCount = counts[rating];
-      FrequentRating = rating;
+      mostFrequentRating = rating;
     }
   }
-
-  return FrequentRating;
+  return mostFrequentRating;
 }
-
 </script>
 
 </body>
