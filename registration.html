@@ -12,9 +12,8 @@
 <body>
 
 <header>
-
     <a href="#" class="logo">
-      <img src="Coder.png" alt="Ground coder" width="150" height="150">
+      <img src= "images\logo.png" alt="Ground coder" width="150" height="150">
       </a> 
 	  <span class="header-text"> Coder Ground <br><span class= "subtext"> let's make Learning fun! </span> </span>
 	  
@@ -41,12 +40,39 @@
  
  
  <main>
- 
+  <script>
+    var icon = document.getElementById("icon");
+    var isDarkMode = localStorage.getItem('darkMode') === 'true';
+    
+    
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-theme");
+      isDarkMode = !isDarkMode; 
+      localStorage.setItem('darkMode', isDarkMode); 
+      if (document.body.classList.contains("dark-theme")) {
+        icon.src = "images/sun.png";
+      } else {
+        icon.src = "images/moon.png";
+      }
+    }
+    
+    
+    if (isDarkMode) {
+      document.body.classList.add("dark-theme");
+      icon.src = "images/sun.png";
+    } else {
+      document.body.classList.remove("dark-theme");
+      icon.src = "images/moon.png";
+    }
+    
+    
+    icon.onclick = toggleDarkMode;
+    </script>
  <div class="c12">
  
 <h2> Add New Kid </h2> 
 
-<p> Register your kid here. Already registered? <a href = "homepage.html"> Sign in here </a>
+<p> Register your kid here. Already registered? <a href = "index.html"> Sign in here </a>
 </div>
 
 <div class ="regchild"> 
