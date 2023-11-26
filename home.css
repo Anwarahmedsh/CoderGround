@@ -1,27 +1,84 @@
 header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1% 5%; /* Adjusted to percentages */
   background-color: var(--8-color);
 }
 
 .header-text {
-margin-left: 1%;
-margin-right: 80%; 
+
 color: var(--11-color);
-font-size: 2vw;
 text-shadow: 2px 2px 4px var(--11-color); 
-white-space: nowrap;
+
 }
 
 .subtext {
-font-size: 1vw;
 color: var(--12-color);
 text-shadow: 2px 2px 4px var(--12-color);
 }
 
+body{
+  background-color: var(--8-color);
+  }
 
+
+  @media screen and (max-width:600px) {
+    nav ul{
+      flex-direction: column;
+    }
+    nav li{
+      width:100%;
+    }
+  
+    .header-text{
+      font-size: 4vw;
+    }
+  
+    .subtext{
+      font-size: 3vw;
+    }
+
+    img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+  
+  
+  nav ul {
+    background-color: var(--11-color);
+  }
+  
+  
+    nav li a {
+      color: var(--1-color);
+    }
+    
+  nav li a:hover {
+    background-color: var(--10-color);
+  }
+
+
+  ul.breadcrumb {
+    background-color: var(--8-color) ;
+    
+  }
+  
+  
+  ul.breadcrumb li+li:before {
+    color: var(--9-color);
+  }
+  
+  
+  ul.breadcrumb li a {
+    color: var(--7-color);
+  }
+  
+  ul.breadcrumb li a:hover {
+    color: var(--7-color);
+  }
+  
+  footer {
+    background-color: var(--11-color);
+    color: var(--1-color);
+    }
 
 #icon{
 cursor:pointer;
@@ -30,14 +87,6 @@ width: 30px;
 height: 30px;
 padding-right: 10px;
 padding-top: 10px;
-}
-
-
-body{
-background-color: var(--8-color);
-font-family: Arial, sans-serif;
-margin:0;
-
 }
 
 @media screen and (max-width:600px) {
@@ -66,35 +115,6 @@ width:100%;
 }
 
 
-nav ul {
-display: flex; 
-flex-wrap: wrap; 
-list-style-type: none;
-margin: 0;
-padding: 0;
-overflow: hidden;
-background-color: var(--11-color);
-}
-
-
-nav li {
-flex: 1;
-}
-
-nav li a {
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
-  color: var(--1-color);
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  padding: 14px;
-}
-
-nav li a:hover {
-background-color: var(--10-color);
-}
 
 #vision{
 background-color: var(--6-color);
@@ -222,6 +242,7 @@ background-color: var(--8-color);
   display: flex;
   flex-wrap: wrap; 
   justify-content: space-around ;
+ 
 }
 
 .course-color{
@@ -244,7 +265,7 @@ margin-bottom: 10px;
 text-align: center;
 }
 .course-description {
-color: var(--4-color);
+color: var(--4\-color);
 font-size: 14px;
 line-height: 1.5;
 text-align: center;
@@ -293,15 +314,7 @@ margin: 0;
 
 }
 
-footer {
-background-color: var(--11-color);
-color: var(--1-color);
-text-align: center;
-font-size: 100%;
-padding: 15px;
-margin: 0;
 
-}
 
 .imgcourse{
 text-align: center;
@@ -318,40 +331,6 @@ padding-left: 2%;
 }
 
 
-ul.breadcrumb {
-  padding: 3px 30px;
-  margin: 0;
-  list-style: none;
-  background-color: var(--8-color) ;
-  display: flex;
-}
-
-ul.breadcrumb li {
-  font-size: 15px;
-  display: flex;
-  align-items: center;
-  margin-right: 5px; /* Adjust the second one */
-}
-
-ul.breadcrumb li+li:before {
-  padding: 0 0px; /* Adjust the padding value as per your preference */
-  color: var(--9-color);
-  content: ">\00a0";
-}
-
-ul.breadcrumb li:first-child a {
-  padding-left: 0;
-}
-
-ul.breadcrumb li a {
-  color: var(--7-color);
-  text-decoration: none;
-}
-
-ul.breadcrumb li a:hover {
-  color: var(--7-color);
-  text-decoration: underline;
-}
 h2 {
 text-align:center;
 font-family: Arial, sans-serif;
