@@ -13,24 +13,20 @@ body main{
 }
 
 header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1px 10px;
     background-color: var(--11-color);
     
 }
 
 .header-text {
-  margin-right:75%;
+  
   color: var(--14-color);
-  font-size: 200%;
+  
   text-shadow: 2px 2px 4px var(--14-color); 
-  white-space: nowrap;
+  
 }
 
 .subtext {
-  font-size: 50%;
+ 
   color: var(--15-color);
   text-shadow: 2px 2px 4px var(--15-color); 
 }
@@ -38,38 +34,21 @@ header {
 
 body{
 background-color: var(--11-color);
-font-family: Arial, sans-serif;
-margin:0;
 }
 
 
-nav {
-  display: flex;
-  justify-content: center;
-}
 
 nav ul {
-	
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
+
   background-color: var(--9-color);
 }
 
 
-nav li {
-	
-  float: left;
-}
-
 
 nav li a {
-  display: block;
+  
   color: var(--1-color);
-  text-align: center;
-  padding: 14px 128px;
-  text-decoration: none;
+ 
  
 }
 
@@ -79,54 +58,34 @@ nav li a:hover {
 
 
 ul.breadcrumb {
-    padding: 3px 30px;
-    margin: 0;
-    list-style: none;
+    
     background-color: var(--11-color) ;
-    display: flex;
+    
   }
   
-  ul.breadcrumb li {
-    font-size: 15px;
-    display: flex;
-    align-items: center;
-    margin-right: 5px; /* Adjust the second one */
-  }
+ 
   
   ul.breadcrumb li+li:before {
-    padding: 0 0px; /* Adjust the padding value as per your preference */
     color: var(--12-color);
-    content: ">\00a0";
   }
   
-  ul.breadcrumb li:first-child a {
-    padding-left: 0;
-  }
-  
+ 
   ul.breadcrumb li a {
     color: var(--10-color);
-    text-decoration: none;
   }
   
   ul.breadcrumb li a:hover {
     color: var(--10-color);
-    text-decoration: underline;
 }
 
 
 footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  
   background-color: var(--9-color);
   color: var(--1-color);
-  text-align: center;
-  padding: 15px;
+  
 }
 
-footer p {
-  margin: 5px;
-}
 
 a {
   color:var(--2-color);
